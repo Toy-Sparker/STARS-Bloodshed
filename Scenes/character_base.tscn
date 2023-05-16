@@ -1,0 +1,39 @@
+[gd_scene load_steps=7 format=3 uid="uid://dmhrmcu23k1vn"]
+
+[ext_resource type="Script" path="res://Scenes/character_base.gd" id="1_64n6y"]
+[ext_resource type="Shader" path="res://Shaders/damage_shd.gdshader" id="1_gmn3f"]
+[ext_resource type="Texture2D" uid="uid://c4jjo1lp1uo6w" path="res://Sprites/player_box.png" id="2_22x0e"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qpak1"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_81ni0"]
+size = Vector2(32, 32)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5nt8w"]
+resource_local_to_scene = true
+shader = ExtResource("1_gmn3f")
+shader_parameter/flash_color = Color(1, 0, 0, 1)
+shader_parameter/flash_modifier = 0.0
+
+[node name="Character_Base" type="Node2D"]
+script = ExtResource("1_64n6y")
+
+[node name="HurtBox" type="Area2D" parent="."]
+collision_mask = 12
+
+[node name="Collision" type="CollisionShape2D" parent="HurtBox"]
+shape = SubResource("RectangleShape2D_qpak1")
+
+[node name="CollectBox" type="Area2D" parent="."]
+collision_mask = 16
+
+[node name="Collision" type="CollisionShape2D" parent="CollectBox"]
+shape = SubResource("RectangleShape2D_81ni0")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_5nt8w")
+texture = ExtResource("2_22x0e")
+
+[connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]
+[connection signal="area_entered" from="CollectBox" to="." method="_on_collect_box_area_entered"]

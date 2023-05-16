@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://daapiug0m8nec"]
+
+[ext_resource type="Script" path="res://Scripts/weapon_gun.gd" id="1_ie0ak"]
+[ext_resource type="AudioStream" uid="uid://bd0efgw3qbpb0" path="res://Sound/Laser_Shoot4.wav" id="2_uh1ha"]
+
+[node name="weapon_gun" type="Node2D"]
+script = ExtResource("1_ie0ak")
+
+[node name="AttackTimer" type="Timer" parent="."]
+wait_time = 0.2
+one_shot = true
+
+[node name="ShootSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_uh1ha")
+volume_db = -2.0
+pitch_scale = 2.0
+bus = &"SFX"

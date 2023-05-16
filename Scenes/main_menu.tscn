@@ -1,0 +1,71 @@
+[gd_scene load_steps=2 format=3 uid="uid://csi5wmpp1m1wf"]
+
+[ext_resource type="Theme" uid="uid://bnqrjjknyln5q" path="res://default_theme.tres" id="1_tockn"]
+
+[node name="main_menu" type="Node2D"]
+
+[node name="MenuLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="MenuLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_tockn")
+
+[node name="ColorRect" type="ColorRect" parent="MenuLayer/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="PlayButton" type="Button" parent="MenuLayer/Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.366667
+anchor_top = 0.503704
+anchor_right = 0.633333
+anchor_bottom = 0.622222
+text = "Play"
+metadata/_edit_use_anchors_ = true
+
+[node name="QuitButton" type="Button" parent="MenuLayer/Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.366667
+anchor_top = 0.651852
+anchor_right = 0.633333
+anchor_bottom = 0.77037
+text = "Quit"
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="MenuLayer/Control"]
+layout_mode = 0
+anchor_left = 0.25
+anchor_top = 0.325926
+anchor_right = 0.75
+anchor_bottom = 0.444444
+theme_override_font_sizes/font_size = 64
+text = "STARS Bloodshed"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Label2" type="Label" parent="MenuLayer/Control"]
+layout_mode = 0
+anchor_left = 0.0166667
+anchor_top = 0.859259
+anchor_right = 0.35
+anchor_bottom = 0.977778
+theme_override_font_sizes/font_size = 24
+text = "MOVE - WASD
+AIM - arrow keys
+SHOOT - Shift or Space"
+vertical_alignment = 2
+metadata/_edit_use_anchors_ = true

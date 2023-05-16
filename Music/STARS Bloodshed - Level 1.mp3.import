@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://byuxagg0k6v3m"
+path="res://.godot/imported/STARS Bloodshed - Level 1.mp3-31148374eaa08e785c021f63d511ddc0.mp3str"
+
+[deps]
+
+source_file="res://Music/STARS Bloodshed - Level 1.mp3"
+dest_files=["res://.godot/imported/STARS Bloodshed - Level 1.mp3-31148374eaa08e785c021f63d511ddc0.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=400.0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://dkuvgd4w1hcq0"]
+
+[ext_resource type="PackedScene" uid="uid://c6uj4f1eg1gfv" path="res://Scenes/enemy.tscn" id="1_ugmk7"]
+[ext_resource type="Shader" path="res://Shaders/damage_shd.gdshader" id="2_ge0cx"]
+[ext_resource type="Texture2D" uid="uid://dxp1mblatakxa" path="res://Sprites/enemy_box_2.png" id="3_bamfq"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_livv7"]
+resource_local_to_scene = true
+shader = ExtResource("2_ge0cx")
+shader_parameter/flash_color = Color(1, 1, 1, 1)
+shader_parameter/flash_modifier = 0.0
+
+[node name="enemy_strong" instance=ExtResource("1_ugmk7")]
+speed = 2600.0
+hp = 12.0
+
+[node name="Sprite" parent="." index="2"]
+material = SubResource("ShaderMaterial_livv7")
+texture = ExtResource("3_bamfq")
+
+[editable path="HitBox"]

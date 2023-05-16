@@ -1,0 +1,62 @@
+[gd_scene load_steps=9 format=3 uid="uid://cit8fygy0qgfs"]
+
+[ext_resource type="Texture2D" uid="uid://x2qqkm21axt5" path="res://Sprites/passive_inferno.png" id="1_8qq0s"]
+[ext_resource type="Script" path="res://Scripts/proj_inferno.gd" id="1_xauhu"]
+[ext_resource type="PackedScene" uid="uid://cays0m75lqdc2" path="res://Scenes/hit_box.tscn" id="2_srdip"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mm78o"]
+size = Vector2(30, 30)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_plig4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jm7ya"]
+atlas = ExtResource("1_8qq0s")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nya38"]
+atlas = ExtResource("1_8qq0s")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_q10if"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jm7ya")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nya38")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="inferno_projectile" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("1_xauhu")
+speed = 0
+hp = 9999
+damage = 2
+
+[node name="HitBox" parent="." instance=ExtResource("2_srdip")]
+
+[node name="Collision" parent="HitBox" index="0"]
+shape = SubResource("RectangleShape2D_mm78o")
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource("RectangleShape2D_plig4")
+
+[node name="AnimatedSprite" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_q10if")
+autoplay = "default"
+frame_progress = 0.641788
+
+[node name="LifeTime" type="Timer" parent="."]
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="LifeTime" to="." method="_on_life_time_timeout"]
+
+[editable path="HitBox"]

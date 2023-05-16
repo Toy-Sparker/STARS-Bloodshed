@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://caiupkndcoov8"]
+
+[ext_resource type="Script" path="res://Scripts/projectile.gd" id="1_f4mea"]
+[ext_resource type="Texture2D" uid="uid://gmiibdy0uk37" path="res://Sprites/bullet.png" id="1_sdq8u"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0hn16"]
+size = Vector2(8, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5wc0i"]
+size = Vector2(8, 8)
+
+[node name="bullet" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("1_f4mea")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_sdq8u")
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_0hn16")
+
+[node name="HitBox" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 4
+
+[node name="Collision" type="CollisionShape2D" parent="HitBox"]
+shape = SubResource("RectangleShape2D_5wc0i")
+
+[node name="VisibilityNotifier" type="VisibleOnScreenNotifier2D" parent="."]
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.25
+one_shot = true
+
+[connection signal="screen_exited" from="VisibilityNotifier" to="." method="_on_visibility_notifier_screen_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://dtpqfnstj1k63"]
+
+[ext_resource type="Script" path="res://Scripts/exp_point.gd" id="1_bt36e"]
+[ext_resource type="Texture2D" uid="uid://dqx8l5r1f6q47" path="res://Sprites/exp_point.png" id="1_wnkrv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i2ukq"]
+
+[node name="exp_point" type="Area2D"]
+collision_layer = 16
+collision_mask = 16
+script = ExtResource("1_bt36e")
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_i2ukq")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_wnkrv")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="screen_entered" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
