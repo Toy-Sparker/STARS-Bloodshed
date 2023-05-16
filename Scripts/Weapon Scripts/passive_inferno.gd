@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var inferno_load = preload("res://Scenes/inferno_projectile.tscn")
+@onready var inferno_load = preload("res://Scenes/Projectiles/inferno_projectile.tscn")
 
 var item_level = 1
 var damage = 2

@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+var is_ready = false
+
 var speed = 8000.0
 
 var axis = Vector2()
@@ -15,15 +17,28 @@ var current_exp = 0
 var start_exp = 3
 var next_level_exp = pow(start_exp, level)
 
-@onready var character = preload("res://Scenes/character_jack.tscn")
+var character : Object = null
 
 func _ready():
 	Global.player_node = self
 	EventDispatcher.player_level_up.connect(level_up)
 	
-	#remove_child($Character_Base)
-	var character_inst = character.instantiate()
-	add_child(character_inst)
+	load_character("jack")
+
+func load_character(_character):
+	match(_character):
+		"jack":
+			var character = load("res://Scenes/Characters/character_jack.tscn")
+			add_child(character.instantiate())
+			
+			var _weapon = load("res://Scenes/Weapons/weapon_revolver.tscn")
+			get_node("Weapons").add_child(_weapon.instantiate())
+		"base":
+			var character = load("res://Scenes/Characters/character_base.tscn")
+			add_child(character.instantiate())
+			
+			var _weapon = load("res://Scenes/Weapons/weapon_gun.tscn")
+			get_node("Weapons").add_child(_weapon.instantiate())
 
 func update_exp_ui():
 	Global.canvas_node.get_node("UI/EXPBar").max_value = next_level_exp
@@ -44,10 +59,10 @@ func _process(_delta):
 	if aim_vector != Vector2.ZERO:
 		direction = aim_vector
 	
-	$Weapons/weapon_gun.direction = direction
+	get_node("Weapons").get_child(0).direction = direction
 
 func flash():
-	$Character_Base/Sprite.material.set_shader_parameter("flash_modifier", 1)
+	character.get_node("Sprite").material.set_shader_parameter("flash_modifier", 1)
 	$FlashTimer.start()
 
 func _physics_process(delta):
@@ -71,7 +86,7 @@ func got_hurt():
 		queue_free()
 
 func _on_flash_timer_timeout():
-	$Character_Base/Sprite.material.set_shader_parameter("flash_modifier", 0)
+	character.get_node("Sprite").material.set_shader_parameter("flash_modifier", 0)
 
 func collect_box(area):
 	$PickupSound.pitch_scale = area.pickup_pitch

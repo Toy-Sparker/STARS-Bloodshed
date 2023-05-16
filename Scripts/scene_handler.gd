@@ -2,8 +2,8 @@ extends Node2D
 
 @onready var level1_load = preload("res://Scenes/Level1.tscn")
 @onready var menu_load = preload("res://Scenes/main_menu.tscn")
-@onready var enemy = preload("res://Scenes/enemy.tscn")
-@onready var enemy_strong = preload("res://Scenes/enemy_strong.tscn")
+@onready var enemy = preload("res://Scenes/Enemies/enemy.tscn")
+@onready var enemy_strong = preload("res://Scenes/Enemies/enemy_strong.tscn")
 
 var current_enemy = enemy
 var enemy_strong_chance = 8

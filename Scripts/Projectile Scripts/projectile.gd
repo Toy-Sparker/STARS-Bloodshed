@@ -2,8 +2,8 @@ extends CharacterBody2D
 
 @export var speed = 30000
 var dir = Vector2()
-@export var hp = 1
-@export var damage = 1 
+@export var hp = 9999
+@export var damage = 2
 
 func _process(delta):
 	if hp <= 0:

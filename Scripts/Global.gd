@@ -43,5 +43,5 @@ func _process(delta):
 func level_up(level):
 	match(level):
 		3:
-			var passive_inferno_inst = load("res://Scenes/passive_inferno.tscn").instantiate()
+			var passive_inferno_inst = load("res://Scenes/Weapons/passive_inferno.tscn").instantiate()
 			Global.player_node.get_node("Passives").add_child(passive_inferno_inst)

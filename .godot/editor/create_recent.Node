@@ -1,8 +1,9 @@
+CollisionShape2D
+CharacterBody2D
+Sprite2D
 Label
 Timer
 AnimatedSprite2D
-CollisionShape2D
-CharacterBody2D
 Node2D
 ColorRect
 Control
@@ -13,7 +14,6 @@ StaticBody2D
 Area2D
 TextureRect
 AudioStreamPlayer
-Sprite2D
 ProgressBar
 Camera2D
 TileMap

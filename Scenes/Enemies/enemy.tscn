@@ -1,8 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://c6uj4f1eg1gfv"]
+[gd_scene load_steps=10 format=3]
 
 [ext_resource type="Shader" path="res://Shaders/damage_shd.gdshader" id="1_1b1l0"]
 [ext_resource type="Texture2D" uid="uid://dgkm2nxoj02wf" path="res://Sprites/enemy_box.png" id="1_a1fyj"]
-[ext_resource type="Script" path="res://Scripts/enemy.gd" id="1_wrk8q"]
+[ext_resource type="Script" path="res://Scripts/Enemy Scripts/enemy.gd" id="1_wrk8q"]
 [ext_resource type="PackedScene" uid="uid://cays0m75lqdc2" path="res://Scenes/hit_box.tscn" id="4_askhj"]
 [ext_resource type="AudioStream" uid="uid://c5qiwjlndccx4" path="res://Sound/Hit_Hurt2.wav" id="7_62hsw"]
 

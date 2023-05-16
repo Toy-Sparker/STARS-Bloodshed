@@ -1,8 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://dmhrmcu23k1vn"]
+[gd_scene load_steps=7 format=3 uid="uid://dxn7wnlmi8wtq"]
 
-[ext_resource type="Script" path="res://Scenes/character_base.gd" id="1_64n6y"]
-[ext_resource type="Shader" path="res://Shaders/damage_shd.gdshader" id="1_gmn3f"]
-[ext_resource type="Texture2D" uid="uid://c4jjo1lp1uo6w" path="res://Sprites/player_box.png" id="2_22x0e"]
+[ext_resource type="Script" path="res://Scripts/Character Scripts/character_jack.gd" id="1_i7i32"]
+[ext_resource type="Shader" path="res://Shaders/damage_shd.gdshader" id="2_d1dmr"]
+[ext_resource type="Texture2D" uid="uid://c4jjo1lp1uo6w" path="res://Sprites/player_box.png" id="3_g8wh6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qpak1"]
 size = Vector2(16, 16)
@@ -12,12 +12,12 @@ size = Vector2(32, 32)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_5nt8w"]
 resource_local_to_scene = true
-shader = ExtResource("1_gmn3f")
+shader = ExtResource("2_d1dmr")
 shader_parameter/flash_color = Color(1, 0, 0, 1)
 shader_parameter/flash_modifier = 0.0
 
-[node name="Character_Base" type="Node2D"]
-script = ExtResource("1_64n6y")
+[node name="Character_Jack" type="Node2D"]
+script = ExtResource("1_i7i32")
 
 [node name="HurtBox" type="Area2D" parent="."]
 collision_mask = 12
@@ -33,7 +33,8 @@ shape = SubResource("RectangleShape2D_81ni0")
 
 [node name="Sprite" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_5nt8w")
-texture = ExtResource("2_22x0e")
+position = Vector2(4.76837e-07, 4.76837e-07)
+texture = ExtResource("3_g8wh6")
 
 [connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]
 [connection signal="area_entered" from="CollectBox" to="." method="_on_collect_box_area_entered"]

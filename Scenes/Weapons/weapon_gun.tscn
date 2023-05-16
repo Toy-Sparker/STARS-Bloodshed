@@ -1,6 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://daapiug0m8nec"]
+[gd_scene load_steps=3 format=3]
 
-[ext_resource type="Script" path="res://Scripts/weapon_gun.gd" id="1_ie0ak"]
+[ext_resource type="Script" path="res://Scripts/Weapon Scripts/weapon_gun.gd" id="1_ie0ak"]
 [ext_resource type="AudioStream" uid="uid://bd0efgw3qbpb0" path="res://Sound/Laser_Shoot4.wav" id="2_uh1ha"]
 
 [node name="weapon_gun" type="Node2D"]

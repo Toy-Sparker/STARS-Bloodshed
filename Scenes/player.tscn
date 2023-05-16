@@ -1,7 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://duv3k8cwnv45p"]
+[gd_scene load_steps=5 format=3 uid="uid://bis1rdbnwvbpb"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_6sr2t"]
-[ext_resource type="PackedScene" uid="uid://daapiug0m8nec" path="res://Scenes/weapon_gun.tscn" id="3_pbs6c"]
 [ext_resource type="AudioStream" uid="uid://dmmt1q0axap6p" path="res://Sound/Pickup_Coin.wav" id="6_55gx2"]
 [ext_resource type="AudioStream" uid="uid://b5b61a1t1xx87" path="res://Sound/Powerup4.wav" id="7_i637j"]
 
@@ -15,8 +14,6 @@ script = ExtResource("1_6sr2t")
 shape = SubResource("RectangleShape2D_whhgd")
 
 [node name="Weapons" type="Node2D" parent="."]
-
-[node name="weapon_gun" parent="Weapons" instance=ExtResource("3_pbs6c")]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(2, 2)

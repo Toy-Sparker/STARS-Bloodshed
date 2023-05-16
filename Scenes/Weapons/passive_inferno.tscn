@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://dytcrmdsr253u"]
+[gd_scene load_steps=2 format=3]
 
-[ext_resource type="Script" path="res://Scripts/passive_inferno.gd" id="1_iv6km"]
+[ext_resource type="Script" path="res://Scripts/Weapon Scripts/passive_inferno.gd" id="1_iv6km"]
 
 [node name="passive_inferno" type="Node2D"]
 script = ExtResource("1_iv6km")

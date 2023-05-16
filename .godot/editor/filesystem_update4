@@ -1,7 +1,9 @@
-res://Scenes/scene_handler.tscn
-res://Shaders/damage_shd.gdshader
+res://Scenes/player.tscn
 res://Sprites/new_tile_set.tres
 res://default_theme.tres
-res://Scenes/player.tscn
-res://Scenes/character_base.tscn
-res://Scenes/character_jack.tscn
+res://Shaders/damage_shd.gdshader
+res://Scenes/Characters/character_jack.tscn
+res://Scenes/Characters/character_base.tscn
+res://Scenes/Weapons/weapon_revolver.tscn
+res://Scenes/Projectiles/hitscan.tscn
+res://Scenes/Projectiles/bullet.tscn

@@ -1,6 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://dkuvgd4w1hcq0"]
+[gd_scene load_steps=5 format=3]
 
-[ext_resource type="PackedScene" uid="uid://c6uj4f1eg1gfv" path="res://Scenes/enemy.tscn" id="1_ugmk7"]
+[ext_resource type="PackedScene" uid="uid://c6uj4f1eg1gfv" path="res://Scenes/Enemies/enemy.tscn" id="1_ugmk7"]
 [ext_resource type="Shader" path="res://Shaders/damage_shd.gdshader" id="2_ge0cx"]
 [ext_resource type="Texture2D" uid="uid://dxp1mblatakxa" path="res://Sprites/enemy_box_2.png" id="3_bamfq"]
 

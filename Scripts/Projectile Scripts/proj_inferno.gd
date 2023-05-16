@@ -1,4 +1,4 @@
-extends "res://Scripts/projectile.gd"
+extends "res://Scripts/Projectile Scripts/projectile.gd"
 
 var inferno_growth = 0.04
 var life_time = 1
