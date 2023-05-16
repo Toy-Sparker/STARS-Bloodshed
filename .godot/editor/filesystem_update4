@@ -1,8 +1,7 @@
 res://Scenes/scene_handler.tscn
-res://Sprites/new_tile_set.tres
 res://Shaders/damage_shd.gdshader
+res://Sprites/new_tile_set.tres
 res://default_theme.tres
 res://Scenes/player.tscn
 res://Scenes/character_base.tscn
-res://Scripts/player.gd
 res://Scenes/character_jack.tscn
