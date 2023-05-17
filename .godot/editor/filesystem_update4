@@ -1,9 +1,25 @@
 res://Scenes/player.tscn
+res://Shaders/damage_shd.gdshader
 res://Sprites/new_tile_set.tres
 res://default_theme.tres
-res://Shaders/damage_shd.gdshader
 res://Scenes/Characters/character_jack.tscn
 res://Scenes/Characters/character_base.tscn
 res://Scenes/Weapons/weapon_revolver.tscn
 res://Scenes/Projectiles/hitscan.tscn
 res://Scenes/Projectiles/bullet.tscn
+res://Scripts/Weapon Scripts/weapon_revolver.gd
+res://Scenes/options_menu.tscn
+res://Scenes/Level1.tscn
+res://Scripts/Global.gd
+res://default_bus_layout.tres
+res://Scenes/options_menu.gd
+res://Scripts/EventDispatcher.gd
+res://Scripts/scene_handler.gd
+res://Scripts/CanvasNode.gd
+res://Scripts/player.gd
+res://Scripts/Weapon Scripts/weapon_gun.gd
+res://Scenes/Weapons/weapon_gun.tscn
+res://save_file.tres
+res://save_file.json
+res://Scenes/main_menu.tscn
+res://Scripts/exp_point.gd

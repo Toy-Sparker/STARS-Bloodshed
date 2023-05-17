@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3]
+[gd_scene load_steps=3 format=3 uid="uid://bpipckn7u7jiy"]
 
 [ext_resource type="Script" path="res://Scripts/Weapon Scripts/weapon_gun.gd" id="1_ie0ak"]
 [ext_resource type="AudioStream" uid="uid://bd0efgw3qbpb0" path="res://Sound/Laser_Shoot4.wav" id="2_uh1ha"]
@@ -7,7 +7,7 @@
 script = ExtResource("1_ie0ak")
 
 [node name="AttackTimer" type="Timer" parent="."]
-wait_time = 0.2
+wait_time = 0.25
 one_shot = true
 
 [node name="ShootSound" type="AudioStreamPlayer" parent="."]

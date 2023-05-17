@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://cjk8dc0xe68qb"]
 
 [ext_resource type="TileSet" uid="uid://bsuswauixrgf4" path="res://Sprites/new_tile_set.tres" id="1_g1r2e"]
-[ext_resource type="PackedScene" uid="uid://duv3k8cwnv45p" path="res://Scenes/player.tscn" id="2_cwinu"]
+[ext_resource type="PackedScene" uid="uid://bis1rdbnwvbpb" path="res://Scenes/player.tscn" id="2_cwinu"]
 [ext_resource type="Script" path="res://Scripts/CanvasNode.gd" id="3_ricqm"]
 [ext_resource type="Theme" uid="uid://bnqrjjknyln5q" path="res://default_theme.tres" id="4_ptcuy"]
 [ext_resource type="Texture2D" uid="uid://bu8ytx2yuxlft" path="res://Sprites/skull_icon.png" id="5_dkwq3"]
@@ -37,6 +37,8 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+focus_mode = 1
+mouse_filter = 1
 theme = ExtResource("4_ptcuy")
 
 [node name="EXPBar" type="ProgressBar" parent="CanvasNode/UI"]

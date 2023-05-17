@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var bullet = preload("res://Scenes/Projectiles/hitscan.tscn")
+@onready var bullet = preload("res://Scenes/Projectiles/bullet.tscn")
 var bullet_pierce = 1
 var spread_vector = Vector2()
 var spread_amount = 0.02

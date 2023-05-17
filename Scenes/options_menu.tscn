@@ -1,0 +1,82 @@
+[gd_scene load_steps=2 format=3 uid="uid://gcnmbr3aivv8"]
+
+[ext_resource type="Script" path="res://Scenes/options_menu.gd" id="1_3531d"]
+
+[node name="OptionsMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3531d")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.4
+anchor_top = 0.325926
+anchor_right = 0.6
+anchor_bottom = 0.548148
+metadata/_edit_use_anchors_ = true
+
+[node name="SndLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.416667
+anchor_top = 0.340741
+anchor_right = 0.579167
+anchor_bottom = 0.37037
+text = "Sound"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="SndSlider" type="HSlider" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.416667
+anchor_top = 0.37037
+anchor_right = 0.583333
+anchor_bottom = 0.385185
+focus_mode = 0
+min_value = -48.0
+max_value = 0.0
+metadata/_edit_use_anchors_ = true
+
+[node name="MusicLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.416667
+anchor_top = 0.414815
+anchor_right = 0.579167
+anchor_bottom = 0.444444
+text = "Music"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="MusSlider" type="HSlider" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.416667
+anchor_top = 0.444444
+anchor_right = 0.583333
+anchor_bottom = 0.459259
+focus_mode = 0
+min_value = -48.0
+max_value = 0.0
+metadata/_edit_use_anchors_ = true
+
+[node name="MainMenuButton" type="Button" parent="."]
+layout_mode = 0
+anchor_left = 0.433333
+anchor_top = 0.503704
+anchor_right = 0.566667
+anchor_bottom = 0.533333
+text = "Main Menu"
+metadata/_edit_use_anchors_ = true
+
+[connection signal="value_changed" from="SndSlider" to="." method="_on_snd_slider_value_changed"]
+[connection signal="value_changed" from="MusSlider" to="." method="_on_mus_slider_value_changed"]
+[connection signal="pressed" from="MainMenuButton" to="." method="_on_main_menu_button_pressed"]

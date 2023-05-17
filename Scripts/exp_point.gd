@@ -12,25 +12,25 @@ func _ready():
 	point_rarity()
 
 func point_progression():
-	if Global.clock_minutes >= 1:
+	if Global.clock_time(Global.game_time, Global.clock.minutes) >= 1:
 		green_chance = 10
 	
-	if Global.clock_minutes >= 2:
+	if Global.clock_time(Global.game_time, Global.clock.minutes) >= 2:
 		red_chance = 3
 	
-	if Global.clock_minutes >= 3:
+	if Global.clock_time(Global.game_time, Global.clock.minutes) >= 3:
 		green_chance = 6
 	
-	if Global.clock_minutes >= 4:
+	if Global.clock_time(Global.game_time, Global.clock.minutes) >= 4:
 		red_chance = 2
 	
-	if Global.clock_minutes >= 5:
+	if Global.clock_time(Global.game_time, Global.clock.minutes) >= 5:
 		green_chance = 5
 	
-	if Global.clock_minutes >= 4:
+	if Global.clock_time(Global.game_time, Global.clock.minutes) >= 4:
 		green_chance = 4
 	
-	if Global.clock_minutes >= 3:
+	if Global.clock_time(Global.game_time, Global.clock.minutes) >= 3:
 		green_chance = 3
 
 func point_rarity():

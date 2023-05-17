@@ -7,7 +7,7 @@ var spread_amount = 0.01
 var direction = Vector2()
 var hitscan_length = 256
 var hitscan_size = Vector2(hitscan_length, hitscan_length*0.01)
-var damage = 1
+var damage = 2
 var attack_timer_decr = 0.02
 
 var item_level = 1
@@ -44,10 +44,10 @@ func level_up(level):
 			hitscan_length = 300
 			damage = 3
 		6:
-			hitscan_length = 324
+			hitscan_length = 350
 			damage = 4
 		7:
-			hitscan_length = 356
+			hitscan_length = 400
 			damage = 5
 	
 	hitscan_size = Vector2(hitscan_length, hitscan_length*0.02)

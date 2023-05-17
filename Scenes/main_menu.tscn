@@ -45,7 +45,7 @@ anchor_bottom = 0.77037
 text = "Quit"
 metadata/_edit_use_anchors_ = true
 
-[node name="Label" type="Label" parent="MenuLayer/Control"]
+[node name="TitleLabel" type="Label" parent="MenuLayer/Control"]
 layout_mode = 0
 anchor_left = 0.25
 anchor_top = 0.325926
@@ -57,15 +57,42 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Label2" type="Label" parent="MenuLayer/Control"]
-layout_mode = 0
+[node name="InstructionsLabel" type="Label" parent="MenuLayer/Control"]
+layout_mode = 1
+anchors_preset = -1
 anchor_left = 0.0166667
 anchor_top = 0.859259
-anchor_right = 0.35
+anchor_right = 0.183333
 anchor_bottom = 0.977778
 theme_override_font_sizes/font_size = 24
 text = "MOVE - WASD
 AIM - arrow keys
 SHOOT - Shift or Space"
 vertical_alignment = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="RecordTimeLabel" type="Label" parent="MenuLayer/Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.366667
+anchor_top = 0.859259
+anchor_right = 0.633333
+anchor_bottom = 0.918519
+theme_override_font_sizes/font_size = 24
+text = "Longest Time: N/A"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="RecordKillsLabel" type="Label" parent="MenuLayer/Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.366667
+anchor_top = 0.918519
+anchor_right = 0.633333
+anchor_bottom = 0.977778
+theme_override_font_sizes/font_size = 24
+text = "Most Kills: N/A"
+horizontal_alignment = 1
+vertical_alignment = 1
 metadata/_edit_use_anchors_ = true

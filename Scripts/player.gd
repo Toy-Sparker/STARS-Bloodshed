@@ -23,18 +23,18 @@ func _ready():
 	Global.player_node = self
 	EventDispatcher.player_level_up.connect(level_up)
 	
-	load_character("jack")
+	load_character(Global.player_character)
 
 func load_character(_character):
 	match(_character):
 		"jack":
-			var character = load("res://Scenes/Characters/character_jack.tscn")
+			character = load("res://Scenes/Characters/character_jack.tscn")
 			add_child(character.instantiate())
 			
 			var _weapon = load("res://Scenes/Weapons/weapon_revolver.tscn")
 			get_node("Weapons").add_child(_weapon.instantiate())
 		"base":
-			var character = load("res://Scenes/Characters/character_base.tscn")
+			character = load("res://Scenes/Characters/character_base.tscn")
 			add_child(character.instantiate())
 			
 			var _weapon = load("res://Scenes/Weapons/weapon_gun.tscn")

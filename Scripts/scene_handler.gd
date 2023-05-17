@@ -11,22 +11,25 @@ var spawn_rate_decr = 0.02
 var prog_time_decr = 0.01
 
 func _ready():
+	load_record_data()
+	
+	EventDispatcher.return_to_main_menu.connect(go_back_to_main_menu)
 	$SpawnTimer.wait_time = 1.5
 	$ProgTimer.wait_time = 5
 	$main_menu/MenuLayer/Control/PlayButton.connect("pressed", play_button_pressed)
 	$main_menu/MenuLayer/Control/QuitButton.connect("pressed", quit_button_pressed)
 
 func _process(_delta):
-	if Global.clock_minutes >= 1:
+	if Global.clock_time(Global.game_time, Global.clock.minutes) >= 1:
 		enemy_strong_chance = 5
 	
-	if Global.clock_minutes >= 2:
+	if Global.clock_time(Global.game_time, Global.clock.minutes) >= 2:
 		enemy_strong_chance = 4
 	
-	if Global.clock_minutes >= 3:
+	if Global.clock_time(Global.game_time, Global.clock.minutes) >= 3:
 		enemy_strong_chance = 3
 	
-	if Global.clock_minutes >= 4:
+	if Global.clock_time(Global.game_time, Global.clock.minutes) >= 4:
 		enemy_strong_chance = 2
 
 func reset_settings():
@@ -45,6 +48,7 @@ func play_button_pressed():
 	add_child(level1_inst)
 
 func quit_button_pressed():
+	Global.save_file()
 	get_tree().quit()
 
 func _on_spawn_timer_timeout():
@@ -79,11 +83,24 @@ func _on_prog_timer_timeout():
 	if $ProgTimer.wait_time > 0.06:
 		$ProgTimer.wait_time -= prog_time_decr
 
-func _input(_event):
-	if Input.is_action_just_pressed("ui_cancel") and Global.game_mode == Global.game_modes.game:
-		Global.game_mode = Global.game_modes.menu
-		var menu_inst = menu_load.instantiate()
-		$Level1.queue_free()
-		add_child(menu_inst)
-		$main_menu/MenuLayer/Control/PlayButton.connect("pressed", play_button_pressed)
-		$main_menu/MenuLayer/Control/QuitButton.connect("pressed", quit_button_pressed)
+func go_back_to_main_menu():
+	Global.game_mode = Global.game_modes.menu
+	$Level1.queue_free()
+	var menu_inst = menu_load.instantiate()
+	add_child(menu_inst)
+	$main_menu/MenuLayer/Control/PlayButton.connect("pressed", play_button_pressed)
+	$main_menu/MenuLayer/Control/QuitButton.connect("pressed", quit_button_pressed)
+	
+	if Global.game_time > Global.load_data("record_time"):
+		Global.save_dict["record_time"] = Global.game_time
+	
+	if Global.enemies_killed > Global.load_data("record_kills"):
+		Global.save_dict["record_kills"] = Global.enemies_killed
+	
+	load_record_data()
+
+func load_record_data():
+	var record_time = "Longest Time: " + Global.clock_time(Global.load_data("record_time"), 0)
+	var record_kills = "Most Kills: " + str(Global.load_data("record_kills"))
+	get_node("main_menu/MenuLayer/Control/RecordTimeLabel").text = record_time
+	get_node("main_menu/MenuLayer/Control/RecordKillsLabel").text = record_kills
