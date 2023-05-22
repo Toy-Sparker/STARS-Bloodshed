@@ -1,8 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://rah8vre8413f"]
+[gd_scene load_steps=13 format=3 uid="uid://rah8vre8413f"]
 
 [ext_resource type="Script" path="res://Scripts/Character Scripts/character_base.gd" id="1_g7vjn"]
 [ext_resource type="Shader" path="res://Shaders/damage_shd.gdshader" id="2_y0vxw"]
-[ext_resource type="Texture2D" uid="uid://c4jjo1lp1uo6w" path="res://Sprites/player_box.png" id="3_m5r50"]
+[ext_resource type="Texture2D" uid="uid://c3qjv3pwbnx8g" path="res://Sprites/character_base_sprites.png" id="3_h1jrk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qpak1"]
 size = Vector2(16, 16)
@@ -15,6 +15,54 @@ resource_local_to_scene = true
 shader = ExtResource("2_y0vxw")
 shader_parameter/flash_color = Color(1, 0, 0, 1)
 shader_parameter/flash_modifier = 0.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tq4pt"]
+atlas = ExtResource("3_h1jrk")
+region = Rect2(0, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cmh1k"]
+atlas = ExtResource("3_h1jrk")
+region = Rect2(32, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8eyia"]
+atlas = ExtResource("3_h1jrk")
+region = Rect2(64, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cvux4"]
+atlas = ExtResource("3_h1jrk")
+region = Rect2(96, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wmjyr"]
+atlas = ExtResource("3_h1jrk")
+region = Rect2(128, 0, 32, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jc0h8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tq4pt")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cmh1k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8eyia")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cvux4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wmjyr")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 10.0
+}]
 
 [node name="Character_Base" type="Node2D"]
 script = ExtResource("1_g7vjn")
@@ -31,9 +79,11 @@ collision_mask = 16
 [node name="Collision" type="CollisionShape2D" parent="CollectBox"]
 shape = SubResource("RectangleShape2D_81ni0")
 
-[node name="Sprite" type="Sprite2D" parent="."]
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
 material = SubResource("ShaderMaterial_5nt8w")
-texture = ExtResource("3_m5r50")
+sprite_frames = SubResource("SpriteFrames_jc0h8")
+animation = &"walk"
+frame_progress = 0.329584
 
 [connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]
 [connection signal="area_entered" from="CollectBox" to="." method="_on_collect_box_area_entered"]

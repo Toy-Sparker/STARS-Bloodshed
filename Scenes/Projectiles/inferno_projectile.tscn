@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3]
+[gd_scene load_steps=9 format=3 uid="uid://cgfkmnbwwk5tq"]
 
 [ext_resource type="Texture2D" uid="uid://x2qqkm21axt5" path="res://Sprites/passive_inferno.png" id="1_8qq0s"]
 [ext_resource type="Script" path="res://Scripts/Projectile Scripts/proj_inferno.gd" id="1_xauhu"]
@@ -36,8 +36,6 @@ collision_layer = 2
 collision_mask = 0
 script = ExtResource("1_xauhu")
 speed = 0
-hp = 9999
-damage = 2
 
 [node name="HitBox" parent="." instance=ExtResource("2_srdip")]
 

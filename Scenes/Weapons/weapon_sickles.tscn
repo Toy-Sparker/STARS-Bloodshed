@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://btdj2rihewunv"]
+
+[ext_resource type="Script" path="res://Scripts/Weapon Scripts/weapon_sickles.gd" id="1_ovee0"]
+[ext_resource type="AudioStream" uid="uid://by40mdtthlv33" path="res://Sound/STARSBLOODSHED_melee1.wav" id="2_hecnb"]
+
+[node name="weapon_sickles" type="Node2D"]
+script = ExtResource("1_ovee0")
+
+[node name="AttackTimer" type="Timer" parent="."]
+wait_time = 0.75
+one_shot = true
+
+[node name="MeleeSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_hecnb")
+volume_db = 4.0
+bus = &"SFX"

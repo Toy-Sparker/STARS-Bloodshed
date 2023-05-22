@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://rjh3q3uy67x8"]
 
 [ext_resource type="Script" path="res://Scripts/Weapon Scripts/weapon_revolver.gd" id="1_cbo6i"]
-[ext_resource type="AudioStream" uid="uid://bd0efgw3qbpb0" path="res://Sound/Laser_Shoot4.wav" id="2_r7uvb"]
+[ext_resource type="AudioStream" uid="uid://w275rxm2fq3l" path="res://Sound/STARSBLOODSHED_shoot2.wav" id="2_bi3s1"]
 
 [node name="weapon_revolver" type="Node2D"]
 script = ExtResource("1_cbo6i")
@@ -11,7 +11,5 @@ wait_time = 0.75
 one_shot = true
 
 [node name="ShootSound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("2_r7uvb")
-volume_db = -2.0
-pitch_scale = 2.0
+stream = ExtResource("2_bi3s1")
 bus = &"SFX"

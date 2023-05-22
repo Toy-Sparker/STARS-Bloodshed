@@ -33,7 +33,7 @@ func _on_hurt_box_area_entered(area):
 		get_parent().add_child(deathSound)
 		deathSound.bus = "SFX"
 		deathSound.stream = deathSndLoad
-		deathSound.finished.connect(queue_free)
+		deathSound.finished.connect(deathSound.queue_free)
 		deathSound.play()
 		call_deferred("queue_free")
 

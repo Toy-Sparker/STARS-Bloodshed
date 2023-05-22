@@ -20,6 +20,7 @@ var next_level_exp = pow(start_exp, level)
 var character : Object = null
 
 func _ready():
+	EventDispatcher.player_entered.emit(self)
 	Global.player_node = self
 	EventDispatcher.player_level_up.connect(level_up)
 	
@@ -27,17 +28,23 @@ func _ready():
 
 func load_character(_character):
 	match(_character):
+		"base":
+			character = load("res://Scenes/Characters/character_base.tscn")
+			add_child(character.instantiate())
+			
+			var _weapon = load("res://Scenes/Weapons/weapon_gun.tscn")
+			get_node("Weapons").add_child(_weapon.instantiate())
 		"jack":
 			character = load("res://Scenes/Characters/character_jack.tscn")
 			add_child(character.instantiate())
 			
 			var _weapon = load("res://Scenes/Weapons/weapon_revolver.tscn")
 			get_node("Weapons").add_child(_weapon.instantiate())
-		"base":
-			character = load("res://Scenes/Characters/character_base.tscn")
+		"lumen":
+			character = load("res://Scenes/Characters/character_lumen.tscn")
 			add_child(character.instantiate())
 			
-			var _weapon = load("res://Scenes/Weapons/weapon_gun.tscn")
+			var _weapon = load("res://Scenes/Weapons/weapon_sickles.tscn")
 			get_node("Weapons").add_child(_weapon.instantiate())
 
 func update_exp_ui():
@@ -83,6 +90,7 @@ func got_hurt():
 	flash()
 	
 	if hp <= 0:
+		EventDispatcher.player_died.emit()
 		queue_free()
 
 func _on_flash_timer_timeout():

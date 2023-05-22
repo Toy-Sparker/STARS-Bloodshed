@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3]
+[gd_scene load_steps=3 format=3 uid="uid://cwyi4kfhc6r0k"]
 
 [ext_resource type="Script" path="res://Scripts/Weapon Scripts/passive_inferno.gd" id="1_iv6km"]
+[ext_resource type="AudioStream" uid="uid://ci23jgyfyae2m" path="res://Sound/STARSBLOODSHED_inferno1.wav" id="2_jly7f"]
 
 [node name="passive_inferno" type="Node2D"]
 script = ExtResource("1_iv6km")
@@ -8,5 +9,10 @@ script = ExtResource("1_iv6km")
 [node name="Timer" type="Timer" parent="."]
 wait_time = 2.0
 autostart = true
+
+[node name="InfernoSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_jly7f")
+volume_db = -8.0
+bus = &"SFX"
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

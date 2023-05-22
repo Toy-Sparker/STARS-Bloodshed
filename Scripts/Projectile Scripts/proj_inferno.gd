@@ -4,7 +4,7 @@ var inferno_growth = 0.04
 var life_time = 1
 
 func _ready():
-	$LifeTime.wait_time = life_time
+	$LifeTime.start(life_time)
 
 func _process(delta):
 	scale += Vector2(inferno_growth, inferno_growth)

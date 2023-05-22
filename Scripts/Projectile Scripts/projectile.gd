@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+# -- PROJECTILE --
+
 @export var speed = 30000
 var dir = Vector2()
 @export var hp = 9999

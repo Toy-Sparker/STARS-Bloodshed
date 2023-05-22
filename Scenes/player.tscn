@@ -15,13 +15,6 @@ shape = SubResource("RectangleShape2D_whhgd")
 
 [node name="Weapons" type="Node2D" parent="."]
 
-[node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(2, 2)
-limit_left = 0
-limit_top = 0
-limit_right = 1920
-limit_bottom = 1080
-
 [node name="HPBar" type="ProgressBar" parent="."]
 offset_left = -16.0
 offset_top = -25.0
@@ -41,5 +34,9 @@ stream = ExtResource("7_i637j")
 bus = &"SFX"
 
 [node name="Passives" type="Node2D" parent="."]
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="."]
+update_rotation = false
+update_scale = false
 
 [connection signal="timeout" from="FlashTimer" to="." method="_on_flash_timer_timeout"]

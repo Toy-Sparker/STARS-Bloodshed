@@ -1,5 +1,7 @@
 extends Node2D
 
+# -- CHARACTER - JACK --
+
 @onready var player = get_parent()
 
 var speed = 8000.0
@@ -40,3 +42,8 @@ func _on_hurt_box_area_entered(area):
 func level_up(level):
 	$CollectBox.scale.x += 0.35
 	$CollectBox.scale.y += 0.35
+	
+	match(level):
+		2:
+			var passive_shockwave_inst = load("res://Scenes/Weapons/passive_shockwave.tscn").instantiate()
+			player.get_node("Passives").add_child(passive_shockwave_inst)

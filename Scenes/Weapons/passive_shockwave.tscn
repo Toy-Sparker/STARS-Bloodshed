@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://5wiavw6tivn4"]
+
+[ext_resource type="Script" path="res://Scripts/Weapon Scripts/passive_shockwave.gd" id="1_jbw8p"]
+[ext_resource type="AudioStream" uid="uid://hn2fe84tmbdd" path="res://Sound/STARSBLOODSHED_shockwave1.wav" id="2_ffe05"]
+
+[node name="passive_shockwave" type="Node2D"]
+script = ExtResource("1_jbw8p")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
+[node name="ShockwaveSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_ffe05")
+bus = &"SFX"
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

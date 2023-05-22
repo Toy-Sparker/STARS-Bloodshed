@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://csl4a2dt6av4v"]
+
+[ext_resource type="Script" path="res://Scripts/Projectile Scripts/proj_shockwave.gd" id="1_k21k2"]
+[ext_resource type="Texture2D" uid="uid://tpx12f2b6lhy" path="res://Sprites/passive_shockwave.png" id="2_qj1dg"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_x77qa"]
+radius = 26.0
+
+[node name="shockwave_projectile" type="CharacterBody2D"]
+collision_layer = 4
+collision_mask = 4
+script = ExtResource("1_k21k2")
+speed = 0
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_x77qa")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_qj1dg")
+
+[node name="LifeTime" type="Timer" parent="."]
+wait_time = 0.1
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="LifeTime" to="." method="_on_life_time_timeout"]

@@ -1,6 +1,8 @@
 extends CharacterBody2D
 
-@export var speed = 30000
+# -- PROJECTILE - HITSCAN --
+
+@export var speed = 0
 var dir = Vector2()
 @export var hp = 9999
 @export var damage = 2

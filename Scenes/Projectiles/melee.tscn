@@ -1,0 +1,59 @@
+[gd_scene load_steps=6 format=3 uid="uid://3m881pbeu088"]
+
+[ext_resource type="Script" path="res://Scripts/Projectile Scripts/proj_melee.gd" id="1_mpw4q"]
+[ext_resource type="Texture2D" uid="uid://4mndawweoego" path="res://Sprites/one_pixel.png" id="2_jky43"]
+[ext_resource type="PackedScene" uid="uid://cays0m75lqdc2" path="res://Scenes/hit_box.tscn" id="3_iuhmu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kglg1"]
+size = Vector2(2, 2)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oxtuk"]
+size = Vector2(14, 70)
+
+[node name="melee" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("1_mpw4q")
+damage = 3
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource("RectangleShape2D_kglg1")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.25
+one_shot = true
+autostart = true
+
+[node name="Marker" type="Marker2D" parent="."]
+
+[node name="Sprite" type="Sprite2D" parent="Marker"]
+position = Vector2(-3.8, -32)
+scale = Vector2(7.6, 20)
+texture = ExtResource("2_jky43")
+
+[node name="Sprite2" type="Sprite2D" parent="Marker"]
+scale = Vector2(4.5, 64)
+texture = ExtResource("2_jky43")
+
+[node name="Sprite3" type="Sprite2D" parent="Marker"]
+position = Vector2(-3.75, 32)
+scale = Vector2(7.5, 20)
+texture = ExtResource("2_jky43")
+
+[node name="Sprite4" type="Sprite2D" parent="Marker"]
+position = Vector2(1, 0)
+scale = Vector2(9, 44)
+texture = ExtResource("2_jky43")
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Marker"]
+remote_path = NodePath("../../HitBox")
+
+[node name="HitBox" parent="." instance=ExtResource("3_iuhmu")]
+
+[node name="Collision" parent="HitBox" index="0"]
+shape = SubResource("RectangleShape2D_oxtuk")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+
+[editable path="HitBox"]

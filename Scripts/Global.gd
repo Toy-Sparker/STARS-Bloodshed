@@ -30,6 +30,8 @@ var enemies_killed = 0
 var snd_vol = -24
 var mus_vol = -24
 
+var min_vol = -48
+
 var save_dict : Dictionary = {
 	"sound_vol": snd_vol,
 	"music_vol": mus_vol,
@@ -49,7 +51,16 @@ func _process(delta):
 	if is_instance_valid(player_node):
 		game_time += 1*delta
 	
-	clock_time(game_time, 0)
+	clock_time(game_time, clock.none)
+	
+	bus_mute(snd_vol, 2)
+	bus_mute(mus_vol, 1)
+
+func bus_mute(volume, index):
+	if volume <= min_vol:
+		AudioServer.set_bus_mute(index, true)
+	else:
+		AudioServer.set_bus_mute(index, false)
 
 func clock_time(time, give_clock_time : clock):
 	# Seconds
@@ -76,13 +87,14 @@ func clock_time(time, give_clock_time : clock):
 				return raw_hours
 
 func level_up(level):
-	match(level):
-		3:
-			var passive_inferno_inst = load("res://Scenes/Weapons/passive_inferno.tscn").instantiate()
-			Global.player_node.get_node("Passives").add_child(passive_inferno_inst)
+	pass
 
 func save_file():
 	var save_data = FileAccess.open("user://save_file.json", FileAccess.WRITE)
+	save_dict["sound_vol"] = snd_vol
+	save_dict["music_vol"] = mus_vol
+	save_dict["record_time"] = game_time
+	save_dict["record_kills"] = enemies_killed
 	var json_string = JSON.stringify(save_dict)
 	save_data.store_line(json_string)
 
