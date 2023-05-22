@@ -37,7 +37,6 @@ tabs_visible = false
 metadata/_edit_use_anchors_ = true
 
 [node name="MainMenu" type="TabBar" parent="MenuLayer/Control/TabContainer"]
-visible = false
 layout_mode = 2
 mouse_filter = 2
 scrolling_enabled = false
@@ -62,6 +61,7 @@ text = "Quit"
 metadata/_edit_use_anchors_ = true
 
 [node name="Characters" type="TabBar" parent="MenuLayer/Control/TabContainer"]
+visible = false
 layout_mode = 2
 mouse_filter = 2
 scrolling_enabled = false

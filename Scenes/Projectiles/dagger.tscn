@@ -1,13 +1,13 @@
 [gd_scene load_steps=5 format=3 uid="uid://du7d6jd72xsuh"]
 
 [ext_resource type="Script" path="res://Scripts/Projectile Scripts/proj_dagger.gd" id="1_pr8bf"]
-[ext_resource type="Texture2D" uid="uid://gmiibdy0uk37" path="res://Sprites/bullet.png" id="2_5b38e"]
+[ext_resource type="Texture2D" uid="uid://bn8io4jjvf20q" path="res://Sprites/dagger.png" id="2_5bxiw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0hn16"]
 size = Vector2(8, 8)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5wc0i"]
-size = Vector2(8, 8)
+size = Vector2(12, 8)
 
 [node name="dagger" type="CharacterBody2D"]
 collision_layer = 2
@@ -15,9 +15,10 @@ collision_mask = 0
 script = ExtResource("1_pr8bf")
 
 [node name="Sprite" type="Sprite2D" parent="."]
-texture = ExtResource("2_5b38e")
+texture = ExtResource("2_5bxiw")
 
 [node name="Collision" type="CollisionShape2D" parent="."]
+visible = false
 shape = SubResource("RectangleShape2D_0hn16")
 
 [node name="HitBox" type="Area2D" parent="."]
@@ -25,6 +26,7 @@ collision_layer = 2
 collision_mask = 4
 
 [node name="Collision" type="CollisionShape2D" parent="HitBox"]
+position = Vector2(2, 0)
 shape = SubResource("RectangleShape2D_5wc0i")
 
 [node name="VisibilityNotifier" type="VisibleOnScreenNotifier2D" parent="."]

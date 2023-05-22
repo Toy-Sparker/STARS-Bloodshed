@@ -22,6 +22,7 @@ func attack():
 	var dagger_inst = dagger_load.instantiate()
 	dagger_inst.global_position = global_position
 	angle += 0.3
+	dagger_inst.rotation = angle
 	dagger_inst.dir = Vector2.from_angle(angle)
 	get_parent().get_parent().get_parent().add_child(dagger_inst)
 	$Timer.wait_time = attack_time
@@ -34,6 +35,8 @@ func level_up(level):
 	
 	match(level):
 		3:
-			attack_time -= 0.05
+			attack_time -= 0.04
 		4:
+			attack_time -= 0.02
+		5:
 			attack_time -= 0.02

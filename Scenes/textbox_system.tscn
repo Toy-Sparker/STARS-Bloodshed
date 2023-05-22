@@ -1,0 +1,58 @@
+[gd_scene load_steps=6 format=3 uid="uid://bwkv2waacvuol"]
+
+[ext_resource type="Script" path="res://Scenes/textbox_system.gd" id="1_4bbs8"]
+[ext_resource type="Theme" uid="uid://bnqrjjknyln5q" path="res://default_theme.tres" id="1_bc06t"]
+[ext_resource type="AudioStream" uid="uid://5yi38lmc6vyh" path="res://Sound/STARSBLOODSHED_text1.wav" id="3_0c84f"]
+[ext_resource type="Texture2D" uid="uid://d3neffnqdjepc" path="res://Sprites/text_indicator.png" id="4_wa5oi"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_o7v78"]
+font_size = 32
+
+[node name="TextboxSystem" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_bc06t")
+script = ExtResource("1_4bbs8")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+anchor_top = 0.755556
+anchor_right = 1.0
+anchor_bottom = 1.0
+metadata/_edit_use_anchors_ = true
+
+[node name="TextLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.00833333
+anchor_top = 0.77037
+anchor_right = 0.991667
+anchor_bottom = 0.985185
+text = "text"
+label_settings = SubResource("LabelSettings_o7v78")
+metadata/_edit_use_anchors_ = true
+
+[node name="TypeTimer" type="Timer" parent="."]
+wait_time = 0.2
+one_shot = true
+
+[node name="TextSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_0c84f")
+bus = &"SFX"
+
+[node name="TextureRect" type="TextureRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.970833
+anchor_top = 0.77037
+anchor_right = 0.991667
+anchor_bottom = 0.807407
+texture = ExtResource("4_wa5oi")
+metadata/_edit_use_anchors_ = true
+
+[connection signal="timeout" from="TypeTimer" to="." method="_on_type_timer_timeout"]

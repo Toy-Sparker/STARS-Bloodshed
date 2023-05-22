@@ -6,7 +6,7 @@ extends Node2D
 
 var item_level = 1
 var growth = 0.1
-var attack_time = 2
+var attack_time = 2.5
 
 func _ready():
 	EventDispatcher.player_level_up.connect(level_up)
@@ -24,13 +24,13 @@ func level_up(level):
 	match(item_level):
 		3:
 			growth = 0.14
-			attack_time = 1.6
+			attack_time = 2
 		4:
-			growth = 0.18
-			attack_time = 1.5
+			growth = 0.16
+			attack_time = 1.8
 		5:
-			growth = 0.22
-			attack_time = 1.4
+			growth = 0.18
+			attack_time = 1.6
 		6:
-			growth = 0.26
-			attack_time = 1.3
+			growth = 0.20
+			attack_time = 1.4

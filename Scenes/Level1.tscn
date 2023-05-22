@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://cjk8dc0xe68qb"]
+[gd_scene load_steps=12 format=3 uid="uid://cjk8dc0xe68qb"]
 
 [ext_resource type="TileSet" uid="uid://bsuswauixrgf4" path="res://Sprites/new_tile_set.tres" id="1_g1r2e"]
 [ext_resource type="PackedScene" uid="uid://bis1rdbnwvbpb" path="res://Scenes/player.tscn" id="2_cwinu"]
 [ext_resource type="Script" path="res://Scripts/CanvasNode.gd" id="3_ricqm"]
+[ext_resource type="PackedScene" uid="uid://bwkv2waacvuol" path="res://Scenes/textbox_system.tscn" id="4_bi0a4"]
 [ext_resource type="Theme" uid="uid://bnqrjjknyln5q" path="res://default_theme.tres" id="4_ptcuy"]
 [ext_resource type="Texture2D" uid="uid://bu8ytx2yuxlft" path="res://Sprites/skull_icon.png" id="5_dkwq3"]
 [ext_resource type="AudioStream" uid="uid://byuxagg0k6v3m" path="res://Music/STARS Bloodshed - Level 1.mp3" id="6_xytvc"]
@@ -31,6 +32,8 @@ position = Vector2(960, 544)
 
 [node name="CanvasNode" type="CanvasLayer" parent="."]
 script = ExtResource("3_ricqm")
+
+[node name="TextboxSystem" parent="CanvasNode" instance=ExtResource("4_bi0a4")]
 
 [node name="UI" type="Control" parent="CanvasNode"]
 layout_mode = 3

@@ -1,3 +1,9 @@
+TextureRect
+AudioStreamPlayer
+Timer
+Panel
+Label
+Control
 RemoteTransform2D
 Marker2D
 AudioStreamPlayer2D
@@ -5,12 +11,8 @@ AnimatedSprite2D
 Sprite2D
 TabContainer
 TabBar
-Control
 Button
-Timer
 HSlider
-Label
-Panel
 CollisionShape2D
 CharacterBody2D
 Node2D
@@ -19,8 +21,6 @@ CanvasLayer
 VisibleOnScreenNotifier2D
 StaticBody2D
 Area2D
-TextureRect
-AudioStreamPlayer
 ProgressBar
 Camera2D
 TileMap

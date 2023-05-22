@@ -48,8 +48,12 @@ func level_up(level):
 		4:
 			hitscan_length = 320
 		5:
-			hitscan_length = 340
-		6:
+			damage = 3
 			hitscan_length = 360
+		6:
+			damage = 4
+			hitscan_length = 400
+		7:
+			damage = 5
 	
 	hitscan_set()
