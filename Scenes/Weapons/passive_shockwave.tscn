@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://5wiavw6tivn4"]
 
-[ext_resource type="Script" path="res://Scripts/Weapon Scripts/passive_shockwave.gd" id="1_jbw8p"]
+[ext_resource type="Script" path="res://Scripts/Passive Scripts/passive_shockwave.gd" id="1_jbw8p"]
 [ext_resource type="AudioStream" uid="uid://hn2fe84tmbdd" path="res://Sound/STARSBLOODSHED_shockwave1.wav" id="2_ffe05"]
 
 [node name="passive_shockwave" type="Node2D"]

@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 Global="*res://Scripts/Global.gd"
 EventDispatcher="*res://Scripts/EventDispatcher.gd"
+lib="*res://Scripts/Library.gd"
 
 [display]
 

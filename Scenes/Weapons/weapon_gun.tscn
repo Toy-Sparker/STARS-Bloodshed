@@ -7,7 +7,7 @@
 script = ExtResource("1_ie0ak")
 
 [node name="AttackTimer" type="Timer" parent="."]
-wait_time = 0.25
+wait_time = 0.2
 one_shot = true
 
 [node name="ShootSound" type="AudioStreamPlayer" parent="."]

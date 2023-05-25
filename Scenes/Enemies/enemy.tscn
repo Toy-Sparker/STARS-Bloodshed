@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3]
+[gd_scene load_steps=10 format=3 uid="uid://c5iwca3n7cm5q"]
 
 [ext_resource type="Shader" path="res://Shaders/damage_shd.gdshader" id="1_1b1l0"]
 [ext_resource type="Texture2D" uid="uid://dgkm2nxoj02wf" path="res://Sprites/enemy_box.png" id="1_a1fyj"]

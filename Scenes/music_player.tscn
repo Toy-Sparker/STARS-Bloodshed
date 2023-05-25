@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://dl2uq40yb8c1t"]
+
+[ext_resource type="AudioStream" uid="uid://byuxagg0k6v3m" path="res://Music/STARS Bloodshed - Level 1.mp3" id="1_6wv5p"]
+[ext_resource type="Script" path="res://Scenes/MusicPlayer.gd" id="2_5nmis"]
+
+[node name="MusicPlayer" type="AudioStreamPlayer"]
+process_mode = 3
+stream = ExtResource("1_6wv5p")
+autoplay = true
+bus = &"Music"
+script = ExtResource("2_5nmis")

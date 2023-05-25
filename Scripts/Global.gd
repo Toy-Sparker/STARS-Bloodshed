@@ -12,17 +12,20 @@ enum clock {
 	hours
 }
 
+var game_paused : bool = false
+
 var game_mode : game_modes = game_modes.menu 
 
 var player_character : String = "base"
 
 var player_node : Object
 var canvas_node : Object
+var textbox : Object
 
 #var raw_secs = 0
 #var raw_mins = 0
 #var raw_hours = 0
-
+var global_time = 0
 var game_time = 0
 
 var enemies_killed = 0
@@ -44,11 +47,11 @@ func _ready():
 	
 	AudioServer.set_bus_volume_db(1, mus_vol)
 	AudioServer.set_bus_volume_db(2, snd_vol)
-	
-	EventDispatcher.player_level_up.connect(level_up)
 
 func _process(delta):
-	if is_instance_valid(player_node):
+	global_time += 1*delta
+	
+	if is_instance_valid(player_node) and !get_tree().paused:
 		game_time += 1*delta
 	
 	clock_time(game_time, clock.none)
@@ -86,9 +89,6 @@ func clock_time(time, give_clock_time : clock):
 			clock.hours:
 				return raw_hours
 
-func level_up(level):
-	pass
-
 func save_file():
 	var save_data = FileAccess.open("user://save_file.json", FileAccess.WRITE)
 	save_dict["sound_vol"] = snd_vol
@@ -106,7 +106,7 @@ func load_file():
 	var json_string = save_data.get_line()
 	var json = JSON.new()
 	
-	var parse_result = json.parse(json_string)
+	var _parse_result = json.parse(json_string)
 	
 	var json_data = json.get_data()
 	mus_vol = json_data["music_vol"]
@@ -122,7 +122,7 @@ func load_data(data):
 	var json_string = save_data.get_line()
 	var json = JSON.new()
 	
-	var parse_result = json.parse(json_string)
+	var _parse_result = json.parse(json_string)
 	
 	var json_data = json.get_data()
 	print(json_data[data])

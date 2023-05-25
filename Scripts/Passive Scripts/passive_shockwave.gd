@@ -32,5 +32,5 @@ func level_up(level):
 			growth = 0.18
 			attack_time = 1.6
 		6:
-			growth = 0.20
+			growth = 0.22
 			attack_time = 1.4

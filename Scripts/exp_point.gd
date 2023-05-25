@@ -5,6 +5,12 @@ var pickup_pitch = 0.75
 
 var red_chance = 6
 var green_chance = -1
+var purple_chance = -1
+
+var heal = 0
+
+var current_sound = lib.exp_sounds.get("point1")
+var custom_drop = false
 
 func _ready():
 	point_progression()
@@ -12,6 +18,9 @@ func _ready():
 	point_rarity()
 
 func point_progression():
+	if custom_drop == true:
+		return
+	
 	if Global.clock_time(Global.game_time, Global.clock.minutes) >= 1:
 		green_chance = 10
 	
@@ -51,6 +60,25 @@ func point_rarity():
 		$Sprite.texture = load("res://Sprites/exp_point_3.png")
 		exp_amount = 10
 		pickup_pitch = 1.5
+	
+	if purple_chance == -1:
+		return
+	
+	if randi_range(1, purple_chance) >= purple_chance:
+		$Sprite.texture = load("res://Sprites/exp_point_4.png")
+		exp_amount = 300
+		pickup_pitch = 1
+		heal = 2
+		current_sound = lib.exp_sounds.get("point2")
+
+func play_sound(sound, pitch : float = 1):
+	var pickupSoundPlayer = AudioStreamPlayer.new()
+	get_parent().add_child(pickupSoundPlayer)
+	pickupSoundPlayer.bus = "SFX"
+	pickupSoundPlayer.stream = sound
+	pickupSoundPlayer.pitch_scale = pitch
+	pickupSoundPlayer.finished.connect(pickupSoundPlayer.queue_free)
+	pickupSoundPlayer.play()
 
 func _on_timer_timeout():
 	queue_free()

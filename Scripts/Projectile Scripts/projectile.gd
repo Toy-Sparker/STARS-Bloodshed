@@ -7,7 +7,7 @@ var dir = Vector2()
 @export var hp = 9999
 @export var damage = 2
 
-func _process(delta):
+func _process(_delta):
 	if hp <= 0:
 		call_deferred("queue_free")
 

@@ -1,79 +1,88 @@
 2a60927148abd1d33b818b535e306557
-::res://::1684751746
-default_bus_layout.tres::AudioBusLayout::7108784982126587442::1684297973::0::1::::<><>::
-default_theme.tres::Theme::3332954444856028856::1684739163::0::1::::<><>::uid://cocvpnsct4nge
-export_presets.cfg::TextFile::-1::1683018881::0::1::::<><>::
+::res://::1684961860
+default_bus_layout.tres::AudioBusLayout::7108784982126587442::1684915070::0::1::::<><>::
+default_theme.tres::Theme::3332954444856028856::1684918489::0::1::::<><>::uid://cocvpnsct4nge
+export_presets.cfg::TextFile::-1::1684742391::0::1::::<><>::
 icon.svg::CompressedTexture2D::7412233398706290916::1682663867::1682663873::1::::<><>::
 README.md::TextFile::-1::1684201999::0::1::::<><>::
 ::res://Fonts/::1684201916
 PixeloidSans-Bold.ttf::FontFile::4322614553783845733::1631785528::1683018542::1::::<><>::
 PixeloidSans.ttf::FontFile::5760916488310891868::1631785440::1683018542::1::::<><>::
-::res://Music/::1684201916
+::res://Music/::1684923819
 STARS Bloodshed - Level 1.mp3::AudioStreamMP3::4113637302480122448::1682824325::1682826284::1::::<><>::
-::res://Scenes/::1684751750
-exp_point.tscn::PackedScene::8524796858852968994::1682935301::0::1::::<><>::res://Scripts/exp_point.gd<>uid://dqx8l5r1f6q47
+STARS Bloodshed - Menu.mp3::AudioStreamMP3::1048799917376880093::1684923799::1684923819::1::::<><>::
+::res://Scenes/::1684924090
+exp_point.tscn::PackedScene::8524796858852968994::1684827367::0::1::::<><>::res://Scripts/exp_point.gd<>uid://dqx8l5r1f6q47
+game_ui.tscn::PackedScene::8681577501606889440::1684834789::0::1::::<><>::res://Scripts/CanvasNode.gd<>uid://bnqrjjknyln5q<>uid://bu8ytx2yuxlft
 hit_box.tscn::PackedScene::4823524665293393371::1682738867::0::1::::<><>::
 hurt_box.tscn::PackedScene::4536193605898528693::1682738858::0::1::::<><>::
-Level1.tscn::PackedScene::5427193900530527229::1684751750::0::1::::<><>::uid://bsuswauixrgf4<>uid://bis1rdbnwvbpb<>res://Scripts/CanvasNode.gd<>uid://bwkv2waacvuol<>uid://bnqrjjknyln5q<>uid://bu8ytx2yuxlft<>uid://byuxagg0k6v3m
-main_menu.tscn::PackedScene::6054617026321211385::1684750390::0::1::::<><>::uid://bnqrjjknyln5q<>res://Scripts/CustomButton.gd
-options_menu.gd::GDScript::-1::1684476730::0::1::::<>Control<>::
-options_menu.tscn::PackedScene::426072647826693183::1684371095::0::1::::<><>::res://Scenes/options_menu.gd
-player.tscn::PackedScene::2986699392414489195::1684668763::0::1::::<><>::res://Scripts/player.gd<>uid://dmmt1q0axap6p<>uid://b5b61a1t1xx87
-textbox_system.gd::GDScript::-1::1684751680::0::1::::<>Control<>::
-textbox_system.tscn::PackedScene::3952543450071164031::1684751750::0::1::::<><>::res://Scenes/textbox_system.gd<>uid://bnqrjjknyln5q<>uid://5yi38lmc6vyh
-scene_handler.tscn::PackedScene::6726324333690743447::1684750393::0::1::::<><>::res://Scripts/scene_handler.gd<>uid://csi5wmpp1m1wf
+Level1.tscn::PackedScene::5427193900530527229::1684919609::0::1::::<><>::uid://bsuswauixrgf4<>uid://bis1rdbnwvbpb<>uid://dvxokv5nq6fjc
+main_menu.tscn::PackedScene::6054617026321211385::1684919609::0::1::::<><>::uid://bnqrjjknyln5q<>res://Scripts/CustomButton.gd
+MusicPlayer.gd::GDScript::-1::1684920981::0::1::::<>AudioStreamPlayer<>::
+music_player.tscn::PackedScene::7988322005905432295::1684924090::0::1::::<><>::uid://byuxagg0k6v3m<>res://Scenes/MusicPlayer.gd
+options_menu.tscn::PackedScene::426072647826693183::1684919609::0::1::::<><>::res://Scripts/options_menu.gd
+player.tscn::PackedScene::2986699392414489195::1684924090::0::1::::<><>::res://Scripts/player.gd<>uid://b5b61a1t1xx87
+scene_handler.tscn::PackedScene::6726324333690743447::1684918985::0::1::::<><>::res://Scripts/scene_handler.gd<>uid://csi5wmpp1m1wf<>uid://bwkv2waacvuol<>uid://dl2uq40yb8c1t<>uid://o7bt1dv6l5b2
+textbox_system.tscn::PackedScene::3952543450071164031::1684919609::0::1::::<><>::uid://bnqrjjknyln5q<>res://Scripts/textbox_system.gd<>uid://5yi38lmc6vyh<>uid://d3neffnqdjepc
 ::res://Scenes/Characters/::1684719048
 character_base.tscn::PackedScene::1193695421473817053::1684663930::0::1::::<><>::res://Scripts/Character Scripts/character_base.gd<>res://Shaders/damage_shd.gdshader<>uid://c3qjv3pwbnx8g
 character_jack.tscn::PackedScene::8802425297144898998::1684308585::0::1::::<><>::res://Scripts/Character Scripts/character_jack.gd<>res://Shaders/damage_shd.gdshader<>uid://c4jjo1lp1uo6w
 character_lumen.tscn::PackedScene::2564404520190389556::1684719048::0::1::::<><>::res://Scripts/Character Scripts/character_lumen.gd<>res://Shaders/damage_shd.gdshader
-::res://Scenes/Enemies/::1684206349
-enemy.tscn::PackedScene::-1::1684206349::0::1::::<><>::res://Shaders/damage_shd.gdshader<>uid://dgkm2nxoj02wf<>res://Scripts/Enemy Scripts/enemy.gd<>uid://cays0m75lqdc2<>uid://c5qiwjlndccx4
-enemy_strong.tscn::PackedScene::-1::1684204483::0::1::::<><>::uid://c6uj4f1eg1gfv<>res://Shaders/damage_shd.gdshader<>uid://dxp1mblatakxa
-::res://Scenes/Projectiles/::1684746444
+::res://Scenes/Enemies/::1684924412
+enemy.tscn::PackedScene::6896361087876364268::1684924412::0::1::::<><>::res://Shaders/damage_shd.gdshader<>uid://dgkm2nxoj02wf<>res://Scripts/Enemy Scripts/enemy.gd<>uid://cays0m75lqdc2<>uid://c5qiwjlndccx4
+enemy_boss.tscn::PackedScene::6117864966961061511::1684919609::0::1::::<><>::res://Scenes/Enemies/enemy.tscn<>res://Shaders/damage_shd.gdshader<>uid://cn4l0lwavckga
+enemy_explode.gd::GDScript::-1::1684908219::0::1::::<>AnimatedSprite2D<>::
+enemy_explode.tscn::PackedScene::250082403942178184::1684910615::0::1::::<><>::uid://bhhfvokwjqvjr<>res://Scenes/Enemies/enemy_explode.gd<>uid://bg35msmjffyrw<>uid://bc5xt1123m3ye
+enemy_strong.tscn::PackedScene::5859677523691647827::1684908312::0::1::::<><>::res://Scenes/Enemies/enemy.tscn<>res://Shaders/damage_shd.gdshader<>uid://dxp1mblatakxa
+::res://Scenes/Projectiles/::1684904405
 bullet.tscn::PackedScene::3489760596668793354::1684308585::0::1::::<><>::uid://gmiibdy0uk37<>res://Scripts/Projectile Scripts/projectile.gd
 dagger.tscn::PackedScene::8629337001394719519::1684746444::0::1::::<><>::res://Scripts/Projectile Scripts/proj_dagger.gd<>uid://bn8io4jjvf20q
-hitscan.tscn::PackedScene::8479919190814734985::1684667847::0::1::::<><>::res://Scripts/Projectile Scripts/proj_hitscan.gd<>uid://4mndawweoego<>uid://cays0m75lqdc2
+hitscan.tscn::PackedScene::8479919190814734985::1684904405::0::1::::<><>::res://Scripts/Projectile Scripts/proj_hitscan.gd<>uid://4mndawweoego<>uid://cays0m75lqdc2
 inferno_projectile.tscn::PackedScene::5204925602816982078::1684660793::0::1::::<><>::uid://x2qqkm21axt5<>res://Scripts/Projectile Scripts/proj_inferno.gd<>uid://cays0m75lqdc2
-melee.tscn::PackedScene::1992124135704545831::1684722415::0::1::::<><>::res://Scripts/Projectile Scripts/proj_melee.gd<>uid://4mndawweoego<>uid://cays0m75lqdc2
+melee.tscn::PackedScene::1992124135704545831::1684847791::0::1::::<><>::res://Scripts/Projectile Scripts/proj_melee.gd<>uid://dlwca05pdlakq<>uid://cays0m75lqdc2
 shockwave_projectile.tscn::PackedScene::6060710924625261907::1684663930::0::1::::<><>::res://Scripts/Projectile Scripts/proj_shockwave.gd<>uid://tpx12f2b6lhy
-::res://Scenes/Weapons/::1684739600
-passive_daggers.tscn::PackedScene::3449202497458386875::1684739580::0::1::::<><>::res://Scripts/Weapon Scripts/passive_daggers.gd<>uid://b74uondrroir1
-passive_inferno.tscn::PackedScene::6367079050765205976::1684739591::0::1::::<><>::res://Scripts/Weapon Scripts/passive_inferno.gd<>uid://ci23jgyfyae2m
-passive_shockwave.tscn::PackedScene::2151568494082696187::1684739600::0::1::::<><>::res://Scripts/Weapon Scripts/passive_shockwave.gd<>uid://hn2fe84tmbdd
-weapon_gun.tscn::PackedScene::3456683233573259340::1684313281::0::1::::<><>::res://Scripts/Weapon Scripts/weapon_gun.gd<>uid://bd0efgw3qbpb0
-weapon_revolver.tscn::PackedScene::1212265647381953575::1684663930::0::1::::<><>::res://Scripts/Weapon Scripts/weapon_revolver.gd<>uid://w275rxm2fq3l
-weapon_sickles.tscn::PackedScene::3726797421027895407::1684728856::0::1::::<><>::res://Scripts/Weapon Scripts/weapon_sickles.gd<>uid://by40mdtthlv33
-::res://Scripts/::1684724340
-CanvasNode.gd::GDScript::-1::1684316450::0::1::::<>CanvasLayer<>::
-CustomButton.gd::GDScript::-1::1684373440::0::1::::<>Node<>::
-EventDispatcher.gd::GDScript::-1::1684657837::0::1::::<>Node<>::
-exp_point.gd::GDScript::-1::1684316490::0::1::::<>Area2D<>::
-Global.gd::GDScript::-1::1684720970::0::1::::<>Node<>::
-player.gd::GDScript::-1::1684723041::0::1::::<>CharacterBody2D<>::
-scene_handler.gd::GDScript::-1::1684724340::0::1::::<>Node2D<>::
-::res://Scripts/Character Scripts/::1684726582
-character_base.gd::GDScript::-1::1684721791::0::1::::<>Node2D<>::
-character_jack.gd::GDScript::-1::1684721786::0::1::::<>Node2D<>::
-character_lumen.gd::GDScript::-1::1684726582::0::1::::<>Node2D<>::
-::res://Scripts/Enemy Scripts/::1684724350
-enemy.gd::GDScript::-1::1684724350::0::1::::<>CharacterBody2D<>::
-::res://Scripts/Projectile Scripts/::1684726839
-projectile.gd::GDScript::-1::1684726287::0::1::::<>CharacterBody2D<>::
+::res://Scenes/Weapons/::1684902606
+passive_daggers.tscn::PackedScene::3449202497458386875::1684902606::0::1::::<><>::res://Scripts/Passive Scripts/passive_daggers.gd<>uid://b74uondrroir1
+passive_inferno.tscn::PackedScene::6367079050765205976::1684884699::0::1::::<><>::res://Scripts/Passive Scripts/passive_inferno.gd<>uid://ci23jgyfyae2m
+passive_shockwave.tscn::PackedScene::2151568494082696187::1684884699::0::1::::<><>::res://Scripts/Passive Scripts/passive_shockwave.gd<>uid://hn2fe84tmbdd
+weapon_gun.tscn::PackedScene::3456683233573259340::1684833129::0::1::::<><>::res://Scripts/Weapon Scripts/weapon_gun.gd<>uid://bd0efgw3qbpb0
+weapon_revolver.tscn::PackedScene::1212265647381953575::1684902606::0::1::::<><>::res://Scripts/Weapon Scripts/weapon_revolver.gd<>uid://w275rxm2fq3l
+weapon_sickles.tscn::PackedScene::3726797421027895407::1684902606::0::1::::<><>::res://Scripts/Weapon Scripts/weapon_sickles.gd<>uid://by40mdtthlv33
+::res://Scripts/::1684923889
+CanvasNode.gd::GDScript::-1::1684919078::0::1::::<>CanvasLayer<>::
+CustomButton.gd::GDScript::-1::1684919071::0::1::::<>Node<>::
+EventDispatcher.gd::GDScript::-1::1684914579::0::1::::<>Node<>::
+exp_point.gd::GDScript::-1::1684884308::0::1::::<>Area2D<>::
+Global.gd::GDScript::-1::1684919523::0::1::::<>Node<>::
+Library.gd::GDScript::-1::1684914893::0::1::::<>Node<>::
+options_menu.gd::GDScript::-1::1684918090::0::1::::<>Control<>::
+player.gd::GDScript::-1::1684923889::0::1::::<>CharacterBody2D<>::
+scene_handler.gd::GDScript::-1::1684919596::0::1::::<>Node2D<>::
+textbox_system.gd::GDScript::-1::1684919028::0::1::::<>Control<>::
+::res://Scripts/Character Scripts/::1684923009
+character_base.gd::GDScript::-1::1684923009::0::1::::<>Node2D<>::
+character_jack.gd::GDScript::-1::1684922986::0::1::::<>Node2D<>::
+character_lumen.gd::GDScript::-1::1684922976::0::1::::<>Node2D<>::
+::res://Scripts/Enemy Scripts/::1684924087
+enemy.gd::GDScript::-1::1684924087::0::1::::<>CharacterBody2D<>::
+::res://Scripts/Passive Scripts/::1684904003
+passive_daggers.gd::GDScript::-1::1684904003::0::1::::<>Node2D<>::
+passive_inferno.gd::GDScript::-1::1684726319::0::1::::<>Node2D<>::
+passive_shockwave.gd::GDScript::-1::1684885009::0::1::::<>Node2D<>::
+::res://Scripts/Projectile Scripts/::1684919048
+projectile.gd::GDScript::-1::1684919048::0::1::::<>CharacterBody2D<>::
 proj_dagger.gd::GDScript::-1::1684726839::0::1::::<>CharacterBody2D<>::
 proj_hitscan.gd::GDScript::-1::1684726272::0::1::::<>CharacterBody2D<>::
 proj_inferno.gd::GDScript::-1::1684660793::0::1::::<>CharacterBody2D<>::
 proj_melee.gd::GDScript::-1::1684726279::0::1::::<>CharacterBody2D<>::
 proj_shockwave.gd::GDScript::-1::1684661809::0::1::::<>CharacterBody2D<>::
-::res://Scripts/Weapon Scripts/::1684747217
-passive_daggers.gd::GDScript::-1::1684746444::0::1::::<>Node2D<>::
-passive_inferno.gd::GDScript::-1::1684726319::0::1::::<>Node2D<>::
-passive_shockwave.gd::GDScript::-1::1684743939::0::1::::<>Node2D<>::
-weapon_gun.gd::GDScript::-1::1684309227::0::1::::<>Node2D<>::
-weapon_revolver.gd::GDScript::-1::1684747217::0::1::::<>Node2D<>::
-weapon_sickles.gd::GDScript::-1::1684728429::0::1::::<>Node2D<>::
-::res://Shaders/::1684739163
-damage_shd.gdshader::Shader::-1::1684739163::0::1::::<><>::
-::res://Sound/::1684748454
+::res://Scripts/Weapon Scripts/::1684921056
+weapon_gun.gd::GDScript::-1::1684919045::0::1::::<>Node2D<>::
+weapon_revolver.gd::GDScript::-1::1684921056::0::1::::<>Node2D<>::
+weapon_sickles.gd::GDScript::-1::1684884971::0::1::::<>Node2D<>::
+::res://Shaders/::1684900147
+damage_shd.gdshader::Shader::-1::1684900147::0::1::::<><>::
+::res://Sound/::1684905480
 Explosion3.wav::AudioStreamWAV::2852598719963824119::1682816942::1682816942::1::::<><>::
 Hit_Hurt2.wav::AudioStreamWAV::6912062234297920595::1682816942::1682816942::1::::<><>::
 Laser_Shoot2.wav::AudioStreamWAV::2609742316898281752::1682816857::1682816861::1::::<><>::
@@ -85,21 +94,29 @@ STARSBLOODSHED_dagger1.wav::AudioStreamWAV::4693570664181513820::1684726806::168
 STARSBLOODSHED_gameover.wav::AudioStreamWAV::5922715246208991786::1684722262::1684722268::1::::<><>::
 STARSBLOODSHED_inferno1.wav::AudioStreamWAV::5391806816267341778::1684664209::1684664210::1::::<><>::
 STARSBLOODSHED_melee1.wav::AudioStreamWAV::4132359428014051472::1684668044::1684668047::1::::<><>::
+STARSBLOODSHED_pickup2.wav::AudioStreamWAV::5211559093128414629::1684822100::1684822102::1::::<><>::
 STARSBLOODSHED_shockwave1.wav::AudioStreamWAV::519807366458659677::1684661106::1684661106::1::::<><>::
-STARSBLOODSHED_shoot2.wav::AudioStreamWAV::1601890205990976283::1684644218::1684661115::1::::<><>::
+STARSBLOODSHED_shoot2.wav::AudioStreamWAV::1601890205990976283::1684905475::1684905480::1::::<><>::
 STARSBLOODSHED_text1.wav::AudioStreamWAV::2155747864222419555::1684748449::1684748454::1::::<><>::
-::res://Sprites/::1684752104
+STARSBLOODSHED_text_lumen.wav::AudioStreamWAV::2050240303822202458::1684902098::1684902102::1::::<><>::
+::res://Sprites/::1684910566
 block.png::CompressedTexture2D::4355383933978738676::1682739510::1682739513::1::::<><>::
 block_tileset.png::CompressedTexture2D::8042646660850128547::1682924867::1682924871::1::::<><>::
 bullet.png::CompressedTexture2D::446405675452703088::1682666639::1682666641::1::::<><>::
 character_base_sprites.png::CompressedTexture2D::6771744482750290876::1684663795::1684663797::1::::<><>::
 dagger.png::CompressedTexture2D::3367512391445899302::1684745255::1684745260::1::::<><>::
 enemy_box.png::CompressedTexture2D::7601816429779915957::1682664147::1682664205::1::::<><>::
-enemy_box_2.png::CompressedTexture2D::8806171261945332902::1682920439::1682920443::1::::<><>::
-exp_point.png::CompressedTexture2D::8331789145276863362::1682769076::1682769079::1::::<><>::
-exp_point_2.png::CompressedTexture2D::2916126099708995742::1682826494::1682826498::1::::<><>::
-exp_point_3.png::CompressedTexture2D::500353468393256174::1682831677::1682831678::1::::<><>::
-new_tile_set.tres::TileSet::3692239648885566295::1684739163::0::1::::<><>::uid://dmt6hlcnm1x2b
+enemy_box_2.png::CompressedTexture2D::8806171261945332902::1684821473::1682920443::1::::<><>::
+enemy_box_3.png::CompressedTexture2D::5745876433087112276::1684821477::1684821490::1::::<><>::
+enemy_box_explode.png::CompressedTexture2D::2892535071860787303::1684908132::1684908159::1::::<><>::
+enemy_box_explode_2.png::CompressedTexture2D::2867200226318602704::1684908142::1684908159::1::::<><>::
+enemy_box_explode_3.png::CompressedTexture2D::2590161531545478052::1684910560::1684910566::1::::<><>::
+exp_point.png::CompressedTexture2D::8331789145276863362::1684821866::1684821868::1::::<><>::
+exp_point_2.png::CompressedTexture2D::2916126099708995742::1684821861::1684821868::1::::<><>::
+exp_point_3.png::CompressedTexture2D::500353468393256174::1684821852::1684821868::1::::<><>::
+exp_point_4.png::CompressedTexture2D::1454512041662070874::1684909784::1684909821::1::::<><>::
+melee_sickles.png::CompressedTexture2D::7976878435786366540::1684845431::1684845444::1::::<><>::
+new_tile_set.tres::TileSet::3692239648885566295::1684900147::0::1::::<><>::uid://dmt6hlcnm1x2b
 one_pixel.png::CompressedTexture2D::2061043711830512090::1684207262::1684207269::1::::<><>::
 passive_inferno.png::CompressedTexture2D::1671082192653783424::1682936509::1682936513::1::::<><>::
 passive_shockwave.png::CompressedTexture2D::1365998043992468058::1684576020::1684576022::1::::<><>::

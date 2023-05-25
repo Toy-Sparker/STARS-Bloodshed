@@ -45,19 +45,28 @@ scroll_to_selected = false
 [node name="PlayButton" type="Button" parent="MenuLayer/Control/TabContainer/MainMenu"]
 layout_mode = 2
 anchor_left = 0.0555556
-anchor_top = 0.101124
+anchor_top = 0.0833332
 anchor_right = 0.944444
-anchor_bottom = 0.280899
+anchor_bottom = 0.25
 text = "Play"
 metadata/_edit_use_anchors_ = true
 
 [node name="QuitButton" type="Button" parent="MenuLayer/Control/TabContainer/MainMenu"]
 layout_mode = 2
 anchor_left = 0.0555556
-anchor_top = 0.370787
+anchor_top = 0.583333
 anchor_right = 0.944444
-anchor_bottom = 0.550562
+anchor_bottom = 0.749999
 text = "Quit"
+metadata/_edit_use_anchors_ = true
+
+[node name="OptionsButton" type="Button" parent="MenuLayer/Control/TabContainer/MainMenu"]
+layout_mode = 2
+anchor_left = 0.0555556
+anchor_top = 0.333333
+anchor_right = 0.944444
+anchor_bottom = 0.499999
+text = "Options"
 metadata/_edit_use_anchors_ = true
 
 [node name="Characters" type="TabBar" parent="MenuLayer/Control/TabContainer"]

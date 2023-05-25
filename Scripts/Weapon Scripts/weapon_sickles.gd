@@ -8,7 +8,7 @@ var hit_size = Vector2(1, 1)
 var damage = 2
 var attack_max = 1
 var attack_current = 0
-var attack_timer_time = 0.75
+var attack_timer_time = 0.8
 var attack_timer_decr = 0.05
 var attack_dist = 32
 
@@ -47,16 +47,24 @@ func level_up(level):
 	match(item_level):
 		2:
 			hit_size = Vector2(1.2, 1.2)
-			attack_dist = 26
+			attack_dist = 28
 		3:
 			hit_size = Vector2(1.5, 1.5)
-			attack_dist = 25
+			attack_dist = 24
 			damage = 3
 		4:
-			hit_size = Vector2(2, 2)
-			attack_dist = 24
+			hit_size = Vector2(1.8, 1.8)
+			attack_dist = 20
 		5:
-			hit_size = Vector2(2.2, 2.2)
+			hit_size = Vector2(2.0, 2.0)
+		6:
+			hit_size = Vector2(2.3, 2.3)
 			attack_max = 2
+		7:
+			hit_size = Vector2(2.4, 2.4)
+		8:
+			hit_size = Vector2(2.5, 2.5)
+		9:
+			hit_size = Vector2(2.6, 2.6)
 	
 	attack_timer_time -= attack_timer_decr

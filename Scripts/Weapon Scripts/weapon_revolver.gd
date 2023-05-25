@@ -3,11 +3,12 @@ extends Node2D
 # -- WEAPON - REVOLVER --
 
 @onready var hitscan_load = preload("res://Scenes/Projectiles/hitscan.tscn")
-var spread_vector = Vector2()
+var spread_vector : Vector2
 var spread_amount = 0.01
-var direction = Vector2()
+var direction : Vector2
 var hitscan_length = 256
-var hitscan_size = Vector2(hitscan_length, hitscan_length*0.025)
+var hitscan_width = 0.02
+var hitscan_size : Vector2
 var damage = 2
 var attack_timer_time = 0.75
 var attack_timer_decr = 0.05
@@ -15,6 +16,7 @@ var attack_timer_decr = 0.05
 var item_level = 1
 
 func _ready():
+	hitscan_set()
 	EventDispatcher.player_level_up.connect(level_up)
 
 func _process(delta):
@@ -35,7 +37,7 @@ func attack():
 	get_parent().get_parent().get_parent().add_child(hitscan_inst)
 
 func hitscan_set():
-	hitscan_size = Vector2(hitscan_length, hitscan_length*0.025)
+	hitscan_size = Vector2(hitscan_length, hitscan_length*hitscan_width)
 
 func level_up(level):
 	item_level += 1
@@ -52,8 +54,23 @@ func level_up(level):
 			hitscan_length = 360
 		6:
 			damage = 4
+			hitscan_width = 0.03
 			hitscan_length = 400
 		7:
-			damage = 5
+			hitscan_width = 0.04
+			hitscan_length = 420
+			damage = 6
+		8:
+			attack_timer_time -= 0.1
+			hitscan_width = 0.05
+			hitscan_length = 450
+			damage = 8
+		9:
+			hitscan_length = 475
+			hitscan_width = 0.06
+			damage = 12
+		10:
+			hitscan_length = 500
+			damage = 15
 	
 	hitscan_set()

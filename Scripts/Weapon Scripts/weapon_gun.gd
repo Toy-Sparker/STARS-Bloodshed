@@ -13,7 +13,7 @@ var item_level = 1
 func _ready():
 	EventDispatcher.player_level_up.connect(level_up)
 
-func _process(delta):
+func _process(_delta):
 	if Input.is_action_pressed("attack") and $AttackTimer.is_stopped():
 		$AttackTimer.start()
 		attack()
@@ -30,7 +30,7 @@ func attack():
 	bullet_instance.hp = bullet_pierce
 	get_parent().get_parent().get_parent().add_child(bullet_instance)
 
-func level_up(level):
+func level_up(_level):
 	item_level += 1
 	
 	match(item_level):

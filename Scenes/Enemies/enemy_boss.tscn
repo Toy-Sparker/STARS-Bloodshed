@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://ctfslvs3hu1eh"]
+
+[ext_resource type="PackedScene" path="res://Scenes/Enemies/enemy.tscn" id="1_ugmk7"]
+[ext_resource type="Shader" path="res://Shaders/damage_shd.gdshader" id="2_ge0cx"]
+[ext_resource type="Texture2D" uid="uid://cn4l0lwavckga" path="res://Sprites/enemy_box_3.png" id="3_4b4xp"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_livv7"]
+resource_local_to_scene = true
+shader = ExtResource("2_ge0cx")
+shader_parameter/flash_color = Color(1, 1, 1, 1)
+shader_parameter/flash_modifier = 0.0
+
+[node name="enemy_boss" instance=ExtResource("1_ugmk7")]
+death_anim = "enemy3"
+speed = 2100.0
+hp = 200.0
+attack = 2.0
+custom_drops = true
+drop_chances = [{
+"green_chance": 0,
+"purple_chance": 1,
+"red_chance": 0,
+"type": "points"
+}]
+
+[node name="Sprite" parent="." index="2"]
+material = SubResource("ShaderMaterial_livv7")
+texture = ExtResource("3_4b4xp")
+
+[editable path="HitBox"]

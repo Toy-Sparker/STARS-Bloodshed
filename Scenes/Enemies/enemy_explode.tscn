@@ -1,0 +1,143 @@
+[gd_scene load_steps=22 format=3 uid="uid://dte25xbnqece"]
+
+[ext_resource type="Texture2D" uid="uid://bhhfvokwjqvjr" path="res://Sprites/enemy_box_explode.png" id="1_ncdyn"]
+[ext_resource type="Script" path="res://Scenes/Enemies/enemy_explode.gd" id="2_h7boh"]
+[ext_resource type="Texture2D" uid="uid://bg35msmjffyrw" path="res://Sprites/enemy_box_explode_2.png" id="2_nj0jt"]
+[ext_resource type="Texture2D" uid="uid://bc5xt1123m3ye" path="res://Sprites/enemy_box_explode_3.png" id="3_6j3ca"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pd6us"]
+atlas = ExtResource("1_ncdyn")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wafh8"]
+atlas = ExtResource("1_ncdyn")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mn8p2"]
+atlas = ExtResource("1_ncdyn")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yc5yw"]
+atlas = ExtResource("1_ncdyn")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ihcan"]
+atlas = ExtResource("1_ncdyn")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ayoi7"]
+atlas = ExtResource("2_nj0jt")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ndp4y"]
+atlas = ExtResource("2_nj0jt")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0s843"]
+atlas = ExtResource("2_nj0jt")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_04elt"]
+atlas = ExtResource("2_nj0jt")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6w384"]
+atlas = ExtResource("2_nj0jt")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e5oqx"]
+atlas = ExtResource("3_6j3ca")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f60ap"]
+atlas = ExtResource("3_6j3ca")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_prri0"]
+atlas = ExtResource("3_6j3ca")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t71i7"]
+atlas = ExtResource("3_6j3ca")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ckw2j"]
+atlas = ExtResource("3_6j3ca")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hwltp"]
+atlas = ExtResource("3_6j3ca")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xodir"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pd6us")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wafh8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mn8p2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yc5yw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ihcan")
+}],
+"loop": false,
+"name": &"enemy1",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ayoi7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ndp4y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0s843")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_04elt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6w384")
+}],
+"loop": false,
+"name": &"enemy2",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e5oqx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f60ap")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_prri0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t71i7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ckw2j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hwltp")
+}],
+"loop": false,
+"name": &"enemy3",
+"speed": 12.0
+}]
+
+[node name="enemy_explode" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_xodir")
+animation = &"enemy3"
+script = ExtResource("2_h7boh")
+
+[connection signal="animation_finished" from="." to="." method="_on_animation_finished"]

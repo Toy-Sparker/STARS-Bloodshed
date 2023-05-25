@@ -7,6 +7,7 @@ extends Node2D
 var item_level = 1
 var attack_time = 0.5
 var attack_time_decr = 0.1
+var damage = 2
 var angle = 0
 
 func _ready():
@@ -22,6 +23,7 @@ func attack():
 	var dagger_inst = dagger_load.instantiate()
 	dagger_inst.global_position = global_position
 	angle += 0.3
+	dagger_inst.damage = damage
 	dagger_inst.rotation = angle
 	dagger_inst.dir = Vector2.from_angle(angle)
 	get_parent().get_parent().get_parent().add_child(dagger_inst)
@@ -40,3 +42,9 @@ func level_up(level):
 			attack_time -= 0.02
 		5:
 			attack_time -= 0.02
+		7:
+			attack_time -= 0.01
+			damage = 3
+		8:
+			attack_time -= 0.01
+			damage = 4

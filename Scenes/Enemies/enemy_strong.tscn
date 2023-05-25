@@ -1,6 +1,6 @@
-[gd_scene load_steps=5 format=3]
+[gd_scene load_steps=5 format=3 uid="uid://cpqqbd2pw34wt"]
 
-[ext_resource type="PackedScene" uid="uid://c6uj4f1eg1gfv" path="res://Scenes/Enemies/enemy.tscn" id="1_ugmk7"]
+[ext_resource type="PackedScene" path="res://Scenes/Enemies/enemy.tscn" id="1_ugmk7"]
 [ext_resource type="Shader" path="res://Shaders/damage_shd.gdshader" id="2_ge0cx"]
 [ext_resource type="Texture2D" uid="uid://dxp1mblatakxa" path="res://Sprites/enemy_box_2.png" id="3_bamfq"]
 
@@ -11,6 +11,7 @@ shader_parameter/flash_color = Color(1, 1, 1, 1)
 shader_parameter/flash_modifier = 0.0
 
 [node name="enemy_strong" instance=ExtResource("1_ugmk7")]
+death_anim = "enemy2"
 speed = 2600.0
 hp = 12.0
 

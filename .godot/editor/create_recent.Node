@@ -1,13 +1,14 @@
+AnimatedSprite2D
+Label
+CanvasLayer
 TextureRect
 AudioStreamPlayer
 Timer
 Panel
-Label
 Control
 RemoteTransform2D
 Marker2D
 AudioStreamPlayer2D
-AnimatedSprite2D
 Sprite2D
 TabContainer
 TabBar
@@ -17,7 +18,6 @@ CollisionShape2D
 CharacterBody2D
 Node2D
 ColorRect
-CanvasLayer
 VisibleOnScreenNotifier2D
 StaticBody2D
 Area2D

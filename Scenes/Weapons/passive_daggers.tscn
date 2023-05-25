@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bpe24jssmdb2j"]
 
-[ext_resource type="Script" path="res://Scripts/Weapon Scripts/passive_daggers.gd" id="1_82mb1"]
+[ext_resource type="Script" path="res://Scripts/Passive Scripts/passive_daggers.gd" id="1_82mb1"]
 [ext_resource type="AudioStream" uid="uid://b74uondrroir1" path="res://Sound/STARSBLOODSHED_dagger1.wav" id="2_2qkrq"]
 
 [node name="passive_daggers" type="Node2D"]

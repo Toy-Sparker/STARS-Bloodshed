@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://c23jtxm5flqot"]
+[gd_scene load_steps=6 format=3 uid="uid://c23jtxm5flqot"]
 
 [ext_resource type="Script" path="res://Scripts/scene_handler.gd" id="1_3a6qv"]
 [ext_resource type="PackedScene" uid="uid://csi5wmpp1m1wf" path="res://Scenes/main_menu.tscn" id="2_5aerk"]
+[ext_resource type="PackedScene" uid="uid://bwkv2waacvuol" path="res://Scenes/textbox_system.tscn" id="3_ycob3"]
+[ext_resource type="PackedScene" uid="uid://dl2uq40yb8c1t" path="res://Scenes/music_player.tscn" id="4_3tat1"]
+[ext_resource type="AudioStream" uid="uid://o7bt1dv6l5b2" path="res://Music/STARS Bloodshed - Menu.mp3" id="5_tyj05"]
 
 [node name="SceneHandler" type="Node2D"]
 script = ExtResource("1_3a6qv")
@@ -23,6 +26,15 @@ limit_top = 0
 limit_right = 1920
 limit_bottom = 1080
 position_smoothing_enabled = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextboxSystem" parent="CanvasLayer" instance=ExtResource("3_ycob3")]
+custom_minimum_size = Vector2(1920, 1080)
+layout_direction = 2
+
+[node name="MusicPlayer" parent="." instance=ExtResource("4_3tat1")]
+stream = ExtResource("5_tyj05")
 
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
 [connection signal="timeout" from="ProgTimer" to="." method="_on_prog_timer_timeout"]

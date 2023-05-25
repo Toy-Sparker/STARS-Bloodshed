@@ -43,7 +43,15 @@ func level_up(level):
 	$CollectBox.scale.x += 0.2
 	$CollectBox.scale.y += 0.2
 	
+	increase_max_hp(level)
+	
 	match(level):
 		2:
 			var passive_daggers_inst = load("res://Scenes/Weapons/passive_daggers.tscn").instantiate()
 			player.get_node("Passives").add_child(passive_daggers_inst)
+
+func increase_max_hp(level):
+	var threshold = 3
+	
+	if level%threshold == threshold-1:
+		max_hp += 1

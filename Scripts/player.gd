@@ -1,5 +1,10 @@
 extends CharacterBody2D
 
+enum player_states {
+	default
+}
+
+var state = player_states.default
 var is_ready = false
 
 var speed = 8000.0
@@ -17,35 +22,53 @@ var current_exp = 0
 var start_exp = 3
 var next_level_exp = pow(start_exp, level)
 
-var character : Object = null
+var character : Object
 
 func _ready():
 	EventDispatcher.player_entered.emit(self)
-	Global.player_node = self
 	EventDispatcher.player_level_up.connect(level_up)
+	Global.player_node = self
 	
 	load_character(Global.player_character)
 
 func load_character(_character):
 	match(_character):
-		"base":
-			character = load("res://Scenes/Characters/character_base.tscn")
-			add_child(character.instantiate())
-			
-			var _weapon = load("res://Scenes/Weapons/weapon_gun.tscn")
-			get_node("Weapons").add_child(_weapon.instantiate())
 		"jack":
 			character = load("res://Scenes/Characters/character_jack.tscn")
 			add_child(character.instantiate())
 			
 			var _weapon = load("res://Scenes/Weapons/weapon_revolver.tscn")
 			get_node("Weapons").add_child(_weapon.instantiate())
+			
+			Global.textbox.get_text({
+				"text": "Time to kick ass.",
+				"speed": 0.05,
+				"name": "Jack"
+			})
 		"lumen":
 			character = load("res://Scenes/Characters/character_lumen.tscn")
 			add_child(character.instantiate())
 			
 			var _weapon = load("res://Scenes/Weapons/weapon_sickles.tscn")
 			get_node("Weapons").add_child(_weapon.instantiate())
+			
+			Global.textbox.get_text({
+				"text": "Get ready to suck my dick!",
+				"speed": 0.05,
+				"name": "Lumen",
+				"sound": lib.textbox_sounds.get("lumen")
+			})
+		_:
+			character = load("res://Scenes/Characters/character_base.tscn")
+			add_child(character.instantiate())
+			
+			var _weapon = load("res://Scenes/Weapons/weapon_gun.tscn")
+			get_node("Weapons").add_child(_weapon.instantiate())
+			
+			Global.textbox.get_text({
+				"text": "Ready to go.",
+				"speed": 0.05
+			})
 
 func update_exp_ui():
 	Global.canvas_node.get_node("UI/EXPBar").max_value = next_level_exp
@@ -97,11 +120,12 @@ func _on_flash_timer_timeout():
 	character.get_node("Sprite").material.set_shader_parameter("flash_modifier", 0)
 
 func collect_box(area):
-	$PickupSound.pitch_scale = area.pickup_pitch
-	$PickupSound.play()
+	area.play_sound(area.current_sound, area.pickup_pitch)
 	
 	current_exp += area.exp_amount
 	total_exp += area.exp_amount
+	
+	hp = min(hp + area.heal, max_hp)
 	
 	if current_exp >= next_level_exp:
 		$LevelupSound.play()
@@ -109,12 +133,11 @@ func collect_box(area):
 		current_exp -= next_level_exp
 		next_level_exp = pow(start_exp, level)
 		
-		if hp < max_hp:
-			hp += 1
+		hp = min(hp + level, max_hp)
 		
 		EventDispatcher.player_level_up.emit(level)
 	
 	area.queue_free()
 
 func level_up(level):
-	pass
+	character.max_hp = max_hp

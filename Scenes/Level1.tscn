@@ -1,12 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://cjk8dc0xe68qb"]
+[gd_scene load_steps=8 format=3 uid="uid://cjk8dc0xe68qb"]
 
 [ext_resource type="TileSet" uid="uid://bsuswauixrgf4" path="res://Sprites/new_tile_set.tres" id="1_g1r2e"]
 [ext_resource type="PackedScene" uid="uid://bis1rdbnwvbpb" path="res://Scenes/player.tscn" id="2_cwinu"]
-[ext_resource type="Script" path="res://Scripts/CanvasNode.gd" id="3_ricqm"]
-[ext_resource type="PackedScene" uid="uid://bwkv2waacvuol" path="res://Scenes/textbox_system.tscn" id="4_bi0a4"]
-[ext_resource type="Theme" uid="uid://bnqrjjknyln5q" path="res://default_theme.tres" id="4_ptcuy"]
-[ext_resource type="Texture2D" uid="uid://bu8ytx2yuxlft" path="res://Sprites/skull_icon.png" id="5_dkwq3"]
-[ext_resource type="AudioStream" uid="uid://byuxagg0k6v3m" path="res://Music/STARS Bloodshed - Level 1.mp3" id="6_xytvc"]
+[ext_resource type="PackedScene" uid="uid://dvxokv5nq6fjc" path="res://Scenes/game_ui.tscn" id="3_kq4g3"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_qh8hs"]
 normal = Vector2(1, 0)
@@ -30,76 +26,8 @@ layer_0/tile_data = PackedInt32Array(0, 131072, 2, 65536, 196608, 3, 131072, 196
 [node name="Player" parent="." instance=ExtResource("2_cwinu")]
 position = Vector2(960, 544)
 
-[node name="CanvasNode" type="CanvasLayer" parent="."]
-script = ExtResource("3_ricqm")
-
-[node name="TextboxSystem" parent="CanvasNode" instance=ExtResource("4_bi0a4")]
-
-[node name="UI" type="Control" parent="CanvasNode"]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-focus_mode = 1
-mouse_filter = 1
-theme = ExtResource("4_ptcuy")
-
-[node name="EXPBar" type="ProgressBar" parent="CanvasNode/UI"]
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 48.0
-anchor_bottom = 1.2
-grow_horizontal = 2
-show_percentage = false
-metadata/_edit_use_anchors_ = true
-
-[node name="LvlLabel" type="Label" parent="CanvasNode/UI/EXPBar"]
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-theme_override_font_sizes/font_size = 24
-text = "Lv 1"
-horizontal_alignment = 1
-vertical_alignment = 1
-metadata/_edit_use_anchors_ = true
-
-[node name="TimeLabel" type="Label" parent="CanvasNode/UI"]
-layout_mode = 0
-anchor_left = 0.4
-anchor_top = 1.6
-anchor_right = 9.6
-anchor_bottom = 2.8
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 32
-text = "Time: "
-metadata/_edit_use_anchors_ = true
-
-[node name="Skull" type="TextureRect" parent="CanvasNode/UI"]
-layout_mode = 0
-anchor_left = 0.4
-anchor_top = 3.2
-anchor_right = 2.0
-anchor_bottom = 4.8
-texture = ExtResource("5_dkwq3")
-metadata/_edit_use_anchors_ = true
-
-[node name="KillsLabel" type="Label" parent="CanvasNode/UI"]
-layout_mode = 0
-anchor_left = 2.4
-anchor_top = 3.2
-anchor_right = 6.4
-anchor_bottom = 4.8
-theme_override_font_sizes/font_size = 32
-text = "0"
-vertical_alignment = 1
-metadata/_edit_use_anchors_ = true
-
-[node name="Music" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("6_xytvc")
-autoplay = true
-bus = &"Music"
+[node name="GameUI" parent="." instance=ExtResource("3_kq4g3")]
+process_mode = 3
 
 [node name="LevelBorder" type="StaticBody2D" parent="."]
 

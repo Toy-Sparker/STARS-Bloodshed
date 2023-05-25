@@ -40,10 +40,18 @@ func _on_hurt_box_area_entered(area):
 	player.got_hurt()
 
 func level_up(level):
-	$CollectBox.scale.x += 0.35
-	$CollectBox.scale.y += 0.35
+	$CollectBox.scale.x += 0.4
+	$CollectBox.scale.y += 0.4
+	
+	increase_max_hp(level)
 	
 	match(level):
 		2:
 			var passive_shockwave_inst = load("res://Scenes/Weapons/passive_shockwave.tscn").instantiate()
 			player.get_node("Passives").add_child(passive_shockwave_inst)
+
+func increase_max_hp(level):
+	var threshold = 2
+	
+	if level%threshold == threshold-1:
+		max_hp += 1
